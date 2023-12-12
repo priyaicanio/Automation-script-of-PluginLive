@@ -130,9 +130,15 @@ private WebElement saveAsDraft;
         return closeButton;
     }
 
-    @FindBy (xpath = "//div[@class=\"sc-iBYQkv lgqJFl\"]//parent::button[@class=\"ant-btn ant-btn-primary sc-ftTHYK cTaHPE\"]")
+    @FindBy (xpath = "(//button[@class=\"ant-btn ant-btn-primary sc-ftTHYK bIoQFB\"])[4]")
     private WebElement confirmButton;
 
+    public WebElement getWarningConfirmButton() {
+        return warningConfirmButton;
+    }
+
+    @FindBy (xpath = "(//button[@class=\"ant-btn ant-btn-primary sc-ftTHYK bIoQFB\"])[5]")
+    private WebElement warningConfirmButton;
     @FindBy (xpath = "(//button[@class=\"ant-btn ant-btn-secondary sc-ftTHYK ftetyB\"])[4]")
 private  WebElement closeButton;
 
@@ -209,8 +215,8 @@ private  WebElement closeButton;
         click(getRoundDescription());
         Thread.sleep(3000);
         sendkeys(getRoundDescription(),Round3Description);
-        Thread.sleep(3000);
-click(getAddRoundName());
+        Thread.sleep(5000);
+        click(getAddRoundName());
 
 // Publishing the role
         click(getPreviewAndPublish());
@@ -226,8 +232,11 @@ Thread.sleep(3000);
 click(getSelectButton1());
 click(getSelectButton2());
 click(getSelectButton3());
-Thread.sleep(3000);
+Thread.sleep(1000);
 click(getConfirmButton());
+Thread.sleep(2000);
+click(getWarningConfirmButton());
+
 
 
     }

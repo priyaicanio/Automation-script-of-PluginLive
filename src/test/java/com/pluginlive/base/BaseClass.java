@@ -214,7 +214,7 @@ return currenturl;
    //RealExcelData
     public String readExcelData(String sheetname,int rownum,int cellnum) throws IOException {
         String res = null;
-        File file = new File(   "C:\\Users\\ICANIO-10090\\Desktop\\Project\\PluginLive-Automation\\Excel\\PluginLive Automation.xlsx");
+        File file = new File( getPropertyFileValue("excelpath"));
         FileInputStream fileInputStream = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheet(sheetname);
