@@ -232,9 +232,8 @@ public class NewRoleCTCandJobLocation  extends BaseClass {
         scrolldown(getRadiobuttonAnnually());
 
         click(getRadiobuttonAnnually());
-        click(getCtcRangeCheckbox());
         sendkeys(getMinRange(), tier1MinRange);
-        sendkeys(getMaxRange(), tier1MaxRange);
+        //sendkeys(getMaxRange(), tier1MaxRange);
         // click(getDifferentCTCOfEachTier());
         Thread.sleep(3000);
         click(getJobLocation());
@@ -243,26 +242,23 @@ public class NewRoleCTCandJobLocation  extends BaseClass {
         Thread.sleep(5000);
         enterKey();
 
-        click(getOutside());
 
-        scrolldown(getAllowHybrid());
-        if (!allowHybrid.isSelected()) {
-            click(allowHybrid);
-            Thread.sleep(3000);
-        }
+        Thread.sleep(3000);
+        click(allowHybrid);
+Thread.sleep(1000);
+
+        // if (!allowHybrid.isSelected()) {
+
+        //       }
 
         click(getWfoDays());
-        sendkeys(getWfoDays(), "100");
+        sendkeys(getWfoDays(), "10");
         click(getWorkFromOffice());
         Thread.sleep(3000);
-        keydown();
+        enterKey();
 
 
-//
-//click(getTier2CTCRange());
-//sendkeys(getTier2MinRange(),tier2MinRange);
-//sendkeys(getTier2MaxRange(),tier2MaxRange);
-//
+
     }
 }
 

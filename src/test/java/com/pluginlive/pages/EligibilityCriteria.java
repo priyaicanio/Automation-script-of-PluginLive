@@ -25,7 +25,7 @@ public class EligibilityCriteria extends BaseClass {
     }
 
     //Degree
-    @FindBy (xpath = "//input[@id=\"rc_select_6\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_5\"]")
     private WebElement degreevalue;
 
     public WebElement getDegree() {
@@ -53,9 +53,8 @@ public class EligibilityCriteria extends BaseClass {
         return listOfSpecialisation;
     }
 
-    @FindBy (xpath = "//input[@id=\"rc_select_7\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_6\"]")
  private WebElement specialisationvalue;
-
 
 
     public WebElement getSpecialisationvalue() {
@@ -81,7 +80,7 @@ public class EligibilityCriteria extends BaseClass {
         return primarymandatorySkillsValue;
     }
 
-    @FindBy (xpath = "//input[@id=\"rc_select_8\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_7\"]")
     private WebElement primarymandatorySkillsValue;
 
 
@@ -89,7 +88,7 @@ public class EligibilityCriteria extends BaseClass {
         return secondatorymandatorySkillsValue;
     }
 
-    @FindBy(xpath = "//input[@id=\"rc_select_9\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_8\"]")
     private WebElement secondatorymandatorySkillsValue;
 
     @FindBy (xpath =  "//input[@id=\"mandatorySkills_mandatoryCount\"]")
@@ -113,10 +112,10 @@ public class EligibilityCriteria extends BaseClass {
 
 
 
-    @FindBy (xpath = "//input[@id='rc_select_11']")
+    @FindBy (xpath = "//input[@id='rc_select_10']")
     private WebElement optionalSkill;
 
-@FindBy (xpath = "//input[@id='rc_select_12']")
+@FindBy (xpath = "//input[@id=\"rc_select_11\"]")
 private WebElement yearofpassing;
 
     public WebElement getYearofpassing() {
@@ -164,10 +163,10 @@ private WebElement eligibilityButton;
         return outside;
     }
 
-    public void eligibilityCriteria(String degree , String specialisation, String skill1,String skill2, String skill3,String skill4, String skill5, String  skill6) throws AWTException, InterruptedException {
+    public void eligibilityCriteria(String degree , String specialisation, String skill1,String skill2, String skill3,String skill4, String skill5, String  skill6, String year1 , String year2, String year3, String year4, String year5) throws AWTException, InterruptedException {
 
- click(getEligibilityButton());
-    Thread.sleep(3000);
+ //click(getEligibilityButton());
+  //  Thread.sleep(3000);
 
   //Degree
     click(getDegree());
@@ -178,7 +177,6 @@ sendkeys(getDegreevalue(),degree);
 Thread.sleep(3000);
 keydown();
 Thread.sleep(3000);
-click(getOutside());
 
 //specialisation
 Thread.sleep(3000);
@@ -186,9 +184,8 @@ Thread.sleep(3000);
          Thread.sleep(5000);
         sendkeys(getSpecialisationvalue(),specialisation);
         Thread.sleep(5000);
-        keydown();
-        Thread.sleep(3000);
-click(getOutside());
+keydown();
+Thread.sleep(3000);
 
 //Mandatory Primary skills
 scrolldown(getPrimarymandatoryAndSkills());
@@ -199,7 +196,7 @@ sendkeys(getPrimarymandatorySkillsValue(),skill1);
 Thread.sleep(3000);
 keydown();
 Thread.sleep(3000);
-click(getOutside());
+
 
 click(getPrimarymandatorySkillsValue());
 sendkeys(getPrimarymandatorySkillsValue(),skill2);
@@ -221,7 +218,6 @@ sendkeys(getPrimarymandatorySkillsValue(),skill5);
 Thread.sleep(3000);
 enterKey();
 Thread.sleep(3000);
-click(getOutside());
 
 //Secondary mandatory skills
      click(getSecondatorymandatorySkillsValue());
@@ -235,30 +231,21 @@ click(getOutside());
       sendkeys(getNoofSkillsRequired(),"1");
       click(getDeleteMandatorySkill());
 
- //Optional skills
-        //scrolldown(getOptionalSkill());
-       // click(getOptionalSkill());
-//sendkeys(getOptionalSkill(),"Css");
-//Thread.sleep(3000);
-//enterKey();
-//Thread.sleep(3000);
-//click(getOutside());
-
  //Year of Passing
 click(getYearofpassing());
-sendkeys(getYearofpassing(),"2018");
+sendkeys(getYearofpassing(),year1);
 Thread.sleep(3000);
 enterKey();
-sendkeys(getYearofpassing(),"2019");
+sendkeys(getYearofpassing(),year2);
 Thread.sleep(3000);
 enterKey();
-sendkeys(getYearofpassing(),"2020");
+sendkeys(getYearofpassing(),year3);
 Thread.sleep(3000);
 enterKey();
-sendkeys(getYearofpassing(),"2021");
+sendkeys(getYearofpassing(),year4);
 Thread.sleep(3000);
 enterKey();
-sendkeys(getYearofpassing(),"2022");
+sendkeys(getYearofpassing(),year5);
 Thread.sleep(3000);
 enterKey();
 
@@ -269,6 +256,7 @@ sendkeys(getAveragescore(),"60");
 //Allow Arrear
         Thread.sleep(3000);
      click(getAllowArrear());
+     clear(getArrearValue());
      sendkeys(getArrearValue(),"2");
 
 

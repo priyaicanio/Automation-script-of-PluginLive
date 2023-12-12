@@ -136,6 +136,32 @@ private WebElement saveAsDraft;
     @FindBy (xpath = "(//button[@class=\"ant-btn ant-btn-secondary sc-ftTHYK ftetyB\"])[4]")
 private  WebElement closeButton;
 
+    @FindBy(xpath = "//input[@class=\"ant-input ant-input-borderless\"]")
+    private WebElement searchCollege;
+
+    public WebElement getSearchCollege() {
+        return searchCollege;
+    }
+
+    @FindBy (xpath = "//button[@id=\"00e3ac09-4554-44f2-a5b8-769a6bf92499\"]")
+    private WebElement selectButton1;
+    @FindBy (xpath = "//button[@id=\"96cb3d3a-50ee-4231-ae06-b54c3ea42ba2\"]")
+    private WebElement selectButton2;
+
+    @FindBy (xpath = "//button[@id=\"c8f17b0e-9ceb-4da9-b896-3c38df5287bd\"]")
+    private WebElement selectButton3;
+
+    public WebElement getSelectButton1() {
+        return selectButton1;
+    }
+
+    public WebElement getSelectButton2() {
+        return selectButton2;
+    }
+
+    public WebElement getSelectButton3() {
+        return selectButton3;
+    }
 
     public WebElement getPublish() {
         return publish;
@@ -149,41 +175,42 @@ private  WebElement closeButton;
         return hrRound;
     }
 
-    public void interviewprocess() throws InterruptedException {
+    public void interviewprocess(String Roundname1, String Round1Description, String Roundname2, String Round2Description, String Roundname3, String Round3Description, String clgName) throws InterruptedException {
 //Round1
     click(getAddRoundName());
-    sendkeys(getAddRoundName(),"Assessment");
+    sendkeys(getAddRoundName(),Roundname1);
     Thread.sleep(3000);
     click(getAssessment());
    click(getCommunication());
    click(getRoundDescription());
    Thread.sleep(3000);
-   sendkeys(getRoundDescription(),"All The Best Do Well");
+   sendkeys(getRoundDescription(),Round1Description);
    Thread.sleep(3000);
    click(getAddRounds());
 
  //Round2
     click(getAddRoundName());
-    sendkeys(getAddRoundName(),"Technical Round");
+    sendkeys(getAddRoundName(),Roundname2);
     Thread.sleep(3000);
     click(getFaceToFace());
     click(getDomainExperts());
     click(getRoundDescription());
     Thread.sleep(3000);
-    sendkeys(getRoundDescription(),"Must Have knowledge regarding the job position");
+    sendkeys(getRoundDescription(),Round2Description);
     Thread.sleep(3000);
     click(getAddRounds());
 
 
 //Round3
         click(getAddRoundName());
-        sendkeys(getAddRoundName()," HR Discussion");
+        sendkeys(getAddRoundName(),Roundname3);
         Thread.sleep(3000);
         click(getGroupDiscussion());
         click(getRoundDescription());
         Thread.sleep(3000);
-        sendkeys(getRoundDescription(),"Discussion regarding the Location, Shift and Package also About the Company");
+        sendkeys(getRoundDescription(),Round3Description);
         Thread.sleep(3000);
+click(getAddRoundName());
 
 // Publishing the role
         click(getPreviewAndPublish());
@@ -194,28 +221,13 @@ private  WebElement closeButton;
         Thread.sleep(3000);
 click(getSelectColleges());
 Thread.sleep(3000);
-
+sendkeys(getSearchCollege(),clgName);
+Thread.sleep(3000);
+click(getSelectButton1());
+click(getSelectButton2());
+click(getSelectButton3());
+Thread.sleep(3000);
 click(getConfirmButton());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

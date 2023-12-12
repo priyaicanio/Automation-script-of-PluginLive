@@ -94,17 +94,17 @@ private WebElement makeCorrectionOption2;
         return makeCorrectionOption2;
     }
 
-    public void questionnaire() throws InterruptedException {
+    public void questionnaire(String question, String option1, String option2) throws InterruptedException {
 
     click(getAddCustomQuestion());
     click(getTypeQuestion());
     Thread.sleep(3000);
-    sendkeys(getTypeQuestion(),"Are you Okay to Relocate to Chennai?");
+    sendkeys(getTypeQuestion(),question);
     click(getMandatory());
     Thread.sleep(3000);
-    sendkeys(getOption1(),"Yes");
+    sendkeys(getOption1(),option1);
     click(getMakeCorrectforOption1());
-    sendkeys(getOption2(),"No");
+    sendkeys(getOption2(),option2);
 Thread.sleep(3000);
 click(getSaveButton());
 

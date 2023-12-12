@@ -80,24 +80,24 @@ pom.getNewRoleJobDetailsPage().jobDetails(readExcelData("JobDetails",1,0),readEx
     }
     @Test(priority = 5)
     public void ctcandJobLocation() throws IOException, InterruptedException, AWTException {
-pom.getNewRoleCTCandJobLocation().ctcandJobLocation(readExcelData("Sheet1",1,0),readExcelData("Sheet1",1,1), readExcelData("Sheet1",1,2),readExcelData("Sheet1",1,3));
+pom.getNewRoleCTCandJobLocation().ctcandJobLocation(readExcelData("CTCandJobLocation",1,0),readExcelData("CTCandJobLocation",1,1), readExcelData("CTCandJobLocation",1,2),readExcelData("CTCandJobLocation",1,3));
   Thread.sleep(3000);  }
 
    @Test(priority = 6)
     public void eligibilityCriteria() throws IOException, InterruptedException, AWTException {
         implicitywait();
         Thread.sleep(3000);
-        pom.getEligibilityCriteria().eligibilityCriteria(readExcelData("EligibilityCriteria",1,0),readExcelData("EligibilityCriteria",1,1),readExcelData("EligibilityCriteria",1,2),readExcelData("EligibilityCriteria",1,3),readExcelData("EligibilityCriteria",1,4),readExcelData("EligibilityCriteria",1,5),readExcelData("EligibilityCriteria",1,6),readExcelData("EligibilityCriteria",1,7));
+        pom.getEligibilityCriteria().eligibilityCriteria(readExcelData("EligibilityCriteria",1,0),readExcelData("EligibilityCriteria",1,1),readExcelData("EligibilityCriteria",1,2),readExcelData("EligibilityCriteria",1,3),readExcelData("EligibilityCriteria",1,4),readExcelData("EligibilityCriteria",1,5),readExcelData("EligibilityCriteria",1,6),readExcelData("EligibilityCriteria",1,7),readExcelData("EligibilityCriteria",1,8),readExcelData("EligibilityCriteria",1,9),readExcelData("EligibilityCriteria",1,10),readExcelData("EligibilityCriteria",1,11),readExcelData("EligibilityCriteria",1,12));
     }
 
     @Test(priority = 7)
     public void questionnaire() throws IOException, InterruptedException {
-        pom.getQuestionnairePage().questionnaire();
+        pom.getQuestionnairePage().questionnaire(readExcelData("Questionnaire",1,0),readExcelData("Questionnaire",1,1),readExcelData("Questionnaire",1,2));
     }
 
     @Test(priority = 8)
     public void interviewworkflow() throws IOException, InterruptedException {
-        pom.getInterviewWorkflowPage().interviewprocess();
+        pom.getInterviewWorkflowPage().interviewprocess(readExcelData("InterviewWorkflow",1,0),readExcelData("InterviewWorkflow",1,1),readExcelData("InterviewWorkflow",1,2),readExcelData("InterviewWorkflow",1,3),readExcelData("InterviewWorkflow",1,4),readExcelData("InterviewWorkflow",1,5),readExcelData("InterviewWorkflow",1,6));
     }
 
 

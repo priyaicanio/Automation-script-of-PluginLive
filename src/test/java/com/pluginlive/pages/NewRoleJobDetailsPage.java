@@ -94,7 +94,7 @@ public class NewRoleJobDetailsPage extends BaseClass {
     private WebElement employmentTypePartTime;
 
     //Job Description
-    @FindBy(xpath = "//div[@class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr']")
+    @FindBy(xpath = "//div[@aria-label=\"Enter job description here...\"]")
     private WebElement jobDescription;
 
     //No. of. candidates to be hired
