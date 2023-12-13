@@ -235,15 +235,15 @@ public class NewRoleCTCandJobLocation  extends BaseClass {
         sendkeys(getMinRange(), tier1MinRange);
         //sendkeys(getMaxRange(), tier1MaxRange);
         // click(getDifferentCTCOfEachTier());
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         click(getJobLocation());
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         sendkeys(getJobLocation(), jobLocation);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         enterKey();
 
 
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         click(allowHybrid);
 Thread.sleep(1000);
 
@@ -254,10 +254,8 @@ Thread.sleep(1000);
         click(getWfoDays());
         sendkeys(getWfoDays(), "10");
         click(getWorkFromOffice());
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         enterKey();
-
-
 
     }
 }

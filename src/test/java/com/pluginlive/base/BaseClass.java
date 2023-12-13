@@ -37,6 +37,11 @@ public class BaseClass {
         driver.get(url);
     }
 
+    //Refresh
+    public static void refresh(){
+        driver.navigate().refresh();
+    }
+
 //Maximize window
     public static void maximizewindow(){
      driver.manage().window().maximize();
@@ -172,6 +177,8 @@ return currenturl;
      WebElement element = driver.findElement(By.xpath(value));
      return element;
     }
+
+
 //GetText
     public String getText(WebElement element){
      String text = element.getText();

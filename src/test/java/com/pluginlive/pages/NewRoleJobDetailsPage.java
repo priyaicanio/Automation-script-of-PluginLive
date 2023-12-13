@@ -94,7 +94,7 @@ public class NewRoleJobDetailsPage extends BaseClass {
     private WebElement employmentTypePartTime;
 
     //Job Description
-    @FindBy(xpath = "//div[@aria-label=\"Enter job description here...\"]")
+    @FindBy(xpath = "(//div[@class=\"notranslate public-DraftEditor-content\"])[1]")
     private WebElement jobDescription;
 
     //No. of. candidates to be hired
@@ -201,12 +201,14 @@ public class NewRoleJobDetailsPage extends BaseClass {
 sendkeys(getJobDetails(),function);
 keydown();
 click(getJobTitle());
-Thread.sleep(3000);
+Thread.sleep(1000);
 sendkeys(getJobTitle(),jobTitle);
 keydown();
 click(getJobTypeFresher());
         click(getEmploymentTypeOnroll());
         click(getEmploymentTypeFullTime());
+        Thread.sleep(1000);
+        click(getJobDescription());
         sendkeys(getJobDescription(), jobDescription);
         click(getNoofCandidates());
         sendkeys(getNoofCandidates(), noOfcandidates);

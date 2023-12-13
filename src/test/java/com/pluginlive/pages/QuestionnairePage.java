@@ -98,14 +98,14 @@ private WebElement makeCorrectionOption2;
 
     click(getAddCustomQuestion());
     click(getTypeQuestion());
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     sendkeys(getTypeQuestion(),question);
     click(getMandatory());
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     sendkeys(getOption1(),option1);
     click(getMakeCorrectforOption1());
     sendkeys(getOption2(),option2);
-Thread.sleep(3000);
+Thread.sleep(2000);
 click(getSaveButton());
 
 

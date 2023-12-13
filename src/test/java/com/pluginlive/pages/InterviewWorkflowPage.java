@@ -185,50 +185,50 @@ private  WebElement closeButton;
 //Round1
     click(getAddRoundName());
     sendkeys(getAddRoundName(),Roundname1);
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     click(getAssessment());
    click(getCommunication());
    click(getRoundDescription());
-   Thread.sleep(3000);
+   Thread.sleep(2000);
    sendkeys(getRoundDescription(),Round1Description);
-   Thread.sleep(3000);
+   Thread.sleep(2000);
    click(getAddRounds());
 
  //Round2
     click(getAddRoundName());
     sendkeys(getAddRoundName(),Roundname2);
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     click(getFaceToFace());
     click(getDomainExperts());
     click(getRoundDescription());
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     sendkeys(getRoundDescription(),Round2Description);
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     click(getAddRounds());
 
 
 //Round3
         click(getAddRoundName());
         sendkeys(getAddRoundName(),Roundname3);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         click(getGroupDiscussion());
         click(getRoundDescription());
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         sendkeys(getRoundDescription(),Round3Description);
-        Thread.sleep(5000);
-        click(getAddRoundName());
+        Thread.sleep(3000);
+  click(getAddRoundName());
 
 // Publishing the role
         click(getPreviewAndPublish());
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         click(getPublish());
-        Thread.sleep(3000);
+        Thread.sleep(2000);
      click(getRankingPublish());
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 click(getSelectColleges());
-Thread.sleep(3000);
+Thread.sleep(2000);
 sendkeys(getSearchCollege(),clgName);
-Thread.sleep(3000);
+Thread.sleep(2000);
 click(getSelectButton1());
 click(getSelectButton2());
 click(getSelectButton3());

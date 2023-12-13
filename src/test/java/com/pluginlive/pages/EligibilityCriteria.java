@@ -170,22 +170,22 @@ private WebElement eligibilityButton;
 
   //Degree
     click(getDegree());
-    Thread.sleep(3000);
+    Thread.sleep(1000);
 scrollup(getDegree());
-Thread.sleep(3000);
+Thread.sleep(1000);
 sendkeys(getDegreevalue(),degree);
-Thread.sleep(3000);
+Thread.sleep(2000);
 keydown();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 //specialisation
-Thread.sleep(3000);
+Thread.sleep(2000);
          click(getSpecialisation());
-         Thread.sleep(5000);
+         Thread.sleep(1000);
         sendkeys(getSpecialisationvalue(),specialisation);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 keydown();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 //Mandatory Primary skills
 scrolldown(getPrimarymandatoryAndSkills());
@@ -193,38 +193,38 @@ click(getPrimarymandatoryAndSkills());
 
 click(getPrimarymandatorySkillsValue());
 sendkeys(getPrimarymandatorySkillsValue(),skill1);
-Thread.sleep(3000);
+Thread.sleep(2000);
 keydown();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 
 click(getPrimarymandatorySkillsValue());
 sendkeys(getPrimarymandatorySkillsValue(),skill2);
-Thread.sleep(3000);
+Thread.sleep(2000);
 enterKey();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 sendkeys(getPrimarymandatorySkillsValue(),skill3);
-Thread.sleep(3000);
+Thread.sleep(2000);
 enterKey();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 sendkeys(getPrimarymandatorySkillsValue(),skill4);
-Thread.sleep(3000);
+Thread.sleep(2000);
 enterKey();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 sendkeys(getPrimarymandatorySkillsValue(),skill5);
-Thread.sleep(3000);
+Thread.sleep(2000);
 enterKey();
-Thread.sleep(3000);
+Thread.sleep(1000);
 
 //Secondary mandatory skills
      click(getSecondatorymandatorySkillsValue());
      sendkeys(getSecondatorymandatorySkillsValue(),skill6);
-     Thread.sleep(3000);
+     Thread.sleep(2000);
      enterKey();
- Thread.sleep(3000);
+ Thread.sleep(1000);
 
 // No of skills required
       click(getNoofSkillsRequired());
@@ -234,19 +234,19 @@ Thread.sleep(3000);
  //Year of Passing
 click(getYearofpassing());
 sendkeys(getYearofpassing(),year1);
-Thread.sleep(3000);
+Thread.sleep(1000);
 enterKey();
 sendkeys(getYearofpassing(),year2);
-Thread.sleep(3000);
+Thread.sleep(1000);
 enterKey();
 sendkeys(getYearofpassing(),year3);
-Thread.sleep(3000);
+Thread.sleep(1000);
 enterKey();
 sendkeys(getYearofpassing(),year4);
-Thread.sleep(3000);
+Thread.sleep(1000);
 enterKey();
 sendkeys(getYearofpassing(),year5);
-Thread.sleep(3000);
+Thread.sleep(1000);
 enterKey();
 
 //Score
@@ -254,7 +254,7 @@ click(getAveragescore());
 sendkeys(getAveragescore(),"60");
 
 //Allow Arrear
-        Thread.sleep(3000);
+        Thread.sleep(2000);
      click(getAllowArrear());
      clear(getArrearValue());
      sendkeys(getArrearValue(),"2");
