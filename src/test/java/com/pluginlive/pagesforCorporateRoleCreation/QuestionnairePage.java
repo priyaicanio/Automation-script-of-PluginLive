@@ -1,4 +1,4 @@
-package com.pluginlive.pages;
+package com.pluginlive.pagesforCorporateRoleCreation;
 
 import com.pluginlive.base.BaseClass;
 import org.openqa.selenium.WebElement;

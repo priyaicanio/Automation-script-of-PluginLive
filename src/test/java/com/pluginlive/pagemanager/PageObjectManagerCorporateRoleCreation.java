@@ -1,10 +1,10 @@
 package com.pluginlive.pagemanager;
 
-import com.pluginlive.pages.*;
+import com.pluginlive.pagesforCorporateRoleCreation.*;
 
 import java.io.IOException;
 
-public class PageObjectManager {
+public class PageObjectManagerCorporateRoleCreation {
 
     public LoginPage getLoginPage() throws IOException {
         return(loginPage==null)? loginPage = new LoginPage() :  loginPage;

@@ -218,10 +218,11 @@ return currenturl;
     public void clickddoption(){
 
     }
-   //RealExcelData
+   //ReadExcelData
+    //Corporate Role Creation
     public String readExcelData(String sheetname,int rownum,int cellnum) throws IOException {
         String res = null;
-        File file = new File( getPropertyFileValue("excelpath"));
+        File file = new File(getPropertyFileValue("excelpath"));
         FileInputStream fileInputStream = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheet(sheetname);
@@ -241,10 +242,9 @@ return currenturl;
                 } else {
                     double numericCellValue = cell.getNumericCellValue();
                     long check = Math.round(numericCellValue);
-                    if (numericCellValue == check)
-                    {
+                    if (numericCellValue == check) {
                         res = String.valueOf(check);
-                    } else{
+                    } else {
                         res = String.valueOf(numericCellValue);
                     }
                 }
@@ -255,6 +255,45 @@ return currenturl;
         }
         return res;
     }
+
+
+    //Students Onboarding
+    public String readExcelData1(String sheetname,int rownum,int cellnum) throws IOException {
+        String res = null;
+        File file = new File(getPropertyFileValue("studentOnboardingexcelpath"));
+        FileInputStream fileInputStream = new FileInputStream(file);
+        Workbook workbook = new XSSFWorkbook(fileInputStream);
+        Sheet sheet = workbook.getSheet(sheetname);
+        Row row = sheet.getRow(rownum);
+        Cell cell = row.getCell(cellnum);
+        CellType cellType = cell.getCellType();
+        switch (cellType) {
+            case STRING:
+                res = cell.getStringCellValue();
+                break;
+
+            case NUMERIC:
+                if (DateUtil.isCellDateFormatted(cell)) {
+                    Date dateCellValue = cell.getDateCellValue();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yy");
+                    dateFormat.format(dateCellValue);
+                } else {
+                    double numericCellValue = cell.getNumericCellValue();
+                    long check = Math.round(numericCellValue);
+                    if (numericCellValue == check) {
+                        res = String.valueOf(check);
+                    } else {
+                        res = String.valueOf(numericCellValue);
+                    }
+                }
+
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
+
 // WriteDataincellExcel
     public void WriteDataincellExcel(String sheetname, int cellnum, int rownum, String data) throws IOException {
         File file = new File("C:\\PluginLive Automation\\PluginLive Automation\\Excel\\Pluginlive Automation.xlsx");

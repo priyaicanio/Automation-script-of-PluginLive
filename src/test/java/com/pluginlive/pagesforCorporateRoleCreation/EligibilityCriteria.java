@@ -1,4 +1,4 @@
-package com.pluginlive.pages;
+package com.pluginlive.pagesforCorporateRoleCreation;
 
 import com.pluginlive.base.BaseClass;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 

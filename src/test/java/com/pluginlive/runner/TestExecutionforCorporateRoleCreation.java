@@ -1,7 +1,7 @@
 package com.pluginlive.runner;
 
 import com.pluginlive.base.BaseClass;
-import com.pluginlive.pagemanager.PageObjectManager;
+import com.pluginlive.pagemanager.PageObjectManagerCorporateRoleCreation;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -10,11 +10,11 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class TestExecution extends BaseClass {
-    PageObjectManager pom = new PageObjectManager();
+public class TestExecutionforCorporateRoleCreation extends BaseClass {
+    PageObjectManagerCorporateRoleCreation pom = new PageObjectManagerCorporateRoleCreation();
 
     //Constructor
-    public TestExecution() throws IOException {
+    public TestExecutionforCorporateRoleCreation() throws IOException {
     }
 
     @BeforeClass
@@ -79,8 +79,6 @@ pom.getLoginPage().negativeloginscenario();
 
     @Test(priority = 3)
     //@Test(enabled = false)
-
-
     public void newRoleMsg() throws IOException {
         String actualText = "Add New Role";
         WebElement excepted = pom.getNewRoleJobDetailsPage().getAddNewRole();
@@ -131,9 +129,6 @@ pom.getNewRoleCTCandJobLocation().ctcandJobLocation(readExcelData("CTCandJobLoca
   public void interviewworkflow() throws IOException, InterruptedException {
         pom.getInterviewWorkflowPage().interviewprocess(readExcelData("InterviewWorkflow",1,0),readExcelData("InterviewWorkflow",1,1),readExcelData("InterviewWorkflow",1,2),readExcelData("InterviewWorkflow",1,3),readExcelData("InterviewWorkflow",1,4),readExcelData("InterviewWorkflow",1,5),readExcelData("InterviewWorkflow",1,6));
     }
-
-
-
     @AfterMethod
     public void aftermethod() {
         long endtime = System.currentTimeMillis();
