@@ -10,59 +10,59 @@ import java.io.IOException;
 
 public class StudentRegistration extends BaseClass {
     public StudentRegistration() throws IOException {
-  super();
-        PageFactory.initElements(driver,this);
+        super();
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//input[@id=\"firstName\"]")
-private WebElement firstName;
+    private WebElement firstName;
 
-    @FindBy (xpath = "//input[@id=\"lastName\"]")
+    @FindBy(xpath = "//input[@id=\"lastName\"]")
     private WebElement lastName;
 
-    @FindBy (xpath = "//input[@id=\"email\"]")
+    @FindBy(xpath = "//input[@id=\"email\"]")
     private WebElement email;
 
-    @FindBy (xpath = "//input[@id=\"phoneNumber\"]")
-    private  WebElement phoneNumber;
+    @FindBy(xpath = "//input[@id=\"phoneNumber\"]")
+    private WebElement phoneNumber;
 
-    @FindBy (xpath = "//input[@value='student']")
+    @FindBy(xpath = "//input[@name='radio'][@value='student']")
     private WebElement studentRadioButton;
 
-    @FindBy (xpath = "//input[@value=\"working\"]")
+    @FindBy(xpath = "//input[@value=\"working\"]")
     private WebElement currentlyEmployedRadioButton;
 
-    @FindBy (xpath = "//input[@value=\"other\"]")
+    @FindBy(xpath = "//input[@value=\"other\"]")
     private WebElement currentlyUnemployedRadioButton;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_1\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_12\"]")
     private WebElement selectState;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_2\"]")
-    private  WebElement selectCity;
+    @FindBy(xpath = "//input[@id=\"rc_select_13\"]")
+    private WebElement selectCity;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_3\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_14\"]")
     private WebElement selectCollege;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_4\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_15\"]")
     private WebElement selectDegree;
-@FindBy (xpath = "//input[@id=\"rc_select_5\"]")
-private WebElement selectDepartment;
+    @FindBy(xpath = "//input[@id=\"rc_select_16\"]")
+    private WebElement selectDepartment;
 
-@FindBy (xpath = "//input[@id=\"rc_select_6\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_17\"]")
     private WebElement specialisation;
-@FindBy (xpath = "//input[@id=\"rc_select_7\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_18\"]")
     private WebElement startMonth;
 
-@FindBy (xpath = "//input[@id=\"rc_select_8\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_19\"]")
     private WebElement startYear;
-@FindBy (xpath = "//input[@id=\"rc_select_9\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_20\"]")
     private WebElement endMonth;
 
-@FindBy (xpath = "//input[@id=\"rc_select_10\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_21\"]")
     private WebElement endYear;
 
-@FindBy (xpath = "//button[@form=\"studentForm\"]")
+    @FindBy(xpath = "//*[text()='Submit']")
     private WebElement submitButton;
 
     public WebElement getFirstName() {
@@ -137,51 +137,60 @@ private WebElement selectDepartment;
         return submitButton;
     }
 
-    public void studentRegistration(String firstName,String lastName, String email,String phoneNumber,String state, String city, String college, String degree, String department,String startmonth, String startyear, String endmonth, String endyear  ) throws InterruptedException, AWTException {
+    @FindBy(xpath = "//div[@class=\"sc-fmRtwQ fnsVzQ\"]")
+    private WebElement registrationSuccessMsg;
+
+    public WebElement getRegistrationSuccessMsg() {
+        return registrationSuccessMsg;
+    }
+
+    public void studentRegistration(String firstName, String lastName, String email, String phoneNumber, String state, String city, String college, String degree, String department, String startmonth, String startyear, String endmonth, String endyear) throws InterruptedException, AWTException {
         sendkeys(getFirstName(), firstName);
-    sendkeys(getLastName(), lastName);
-    sendkeys(getEmail(), email);
-    sendkeys(getPhoneNumber(), phoneNumber);
-    Thread.sleep(2000);
-    scrolldown(getStudentRadioButton());
-Thread.sleep(2000);
-actionclick(getStudentRadioButton());
-sendkeys(getSelectState(),state);
-Thread.sleep(3000);
-enterKey();
-sendkeys(getSelectCity(),city);
-Thread.sleep(3000);
-enterKey();
-sendkeys(getSelectCollege(),college);
-Thread.sleep(3000);
-enterKey();
-sendkeys(getSelectDegree(),degree);
-Thread.sleep(2000);
+        sendkeys(getLastName(), lastName);
+        sendkeys(getEmail(), email);
+        sendkeys(getPhoneNumber(), phoneNumber);
+        Thread.sleep(2000);
+        scrolldown(getStudentRadioButton());
+        Thread.sleep(2000);
+        click(getStudentRadioButton());
+        Thread.sleep(2000);
+
+        sendkeys(getSelectState(), state);
+        Thread.sleep(3000);
         enterKey();
-sendkeys(getSelectDepartment(),department);
-Thread.sleep(2000);
+        sendkeys(getSelectCity(), city);
+        Thread.sleep(3000);
         enterKey();
-        sendkeys(getStartMonth(),startmonth);
-enterKey();
-sendkeys(getStartYear(),startyear);
-enterKey();
-sendkeys(getEndMonth(),endmonth);
-enterKey();
-sendkeys(getEndYear(),endyear);
-enterKey();
-Thread.sleep(5000);
-click(getSubmitButton());
+        sendkeys(getSelectCollege(), college);
+        Thread.sleep(5000);
+        enterKey();
+        sendkeys(getSelectDegree(), degree);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getSelectDepartment(), department);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getStartMonth(), startmonth);
+        enterKey();
+        sendkeys(getStartYear(), startyear);
+        enterKey();
+        sendkeys(getEndMonth(), endmonth);
+        enterKey();
+        sendkeys(getEndYear(), endyear);
+        enterKey();
+        Thread.sleep(3000);
+        scrolldown(getSubmitButton());
+        Thread.sleep(2000);
+        click(getSubmitButton());
 
+    }
 
+    // Registration success msg
 
-
-
-
-
-
-
-
-
+    public String registrationsuccessmsg() throws InterruptedException {
+        Thread.sleep(3000);
+        visibilityOf(getRegistrationSuccessMsg());
+      return  getText(getRegistrationSuccessMsg());
 
     }
 
