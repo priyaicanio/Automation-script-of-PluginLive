@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class PersonalDetails extends BaseClass {
@@ -15,7 +17,9 @@ public class PersonalDetails extends BaseClass {
         super();
         PageFactory.initElements(driver,this);
     }
-    String imagePath = "C:\\Users\\ICANIO-10090\\Pictures\\Profile pic.jpg";
+
+  String  imagePath = "C:\\Users\\ICANIO-10090\\Pictures\\Profile pic.jpg";
+
 
     @FindBy (xpath = "//input[@id=\"uniRollNo\"]")
     private WebElement registrationNo;
@@ -114,13 +118,26 @@ private WebElement checkBoxSameasPermanentAddress;
         return saveAndContinue;
     }
 
-    public void personaldetails(String RegNo, String dob, String sex, String Addressline1, String Addressline2, String Country, String State, String City, String Pincode) throws InterruptedException, AWTException {
+    public void personaldetails(String RegNo, String dob, String sex, String Addressline1, String Addressline2, String Country, String State, String City, String Pincode) throws InterruptedException, AWTException, IOException {
 
         sendkeys(getRegistrationNo(),RegNo);
         Thread.sleep(2000);
         click(getUploadPhoto());
  Thread.sleep(3000);
- sendkeys(getUploadPhoto(),imagePath);
+        StringSelection ss = new StringSelection(imagePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Robot r = new Robot();
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
+ Thread.sleep(3000);
+ enterKey();
         sendkeys(getDob(),dob);
         Thread.sleep(2000);
         enterKey();

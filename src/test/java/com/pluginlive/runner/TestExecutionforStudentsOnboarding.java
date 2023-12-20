@@ -16,7 +16,7 @@ public class TestExecutionforStudentsOnboarding extends BaseClass {
     public TestExecutionforStudentsOnboarding() throws IOException {
     }
     @BeforeClass
-
+//@Test (enabled = false)
     public void beforeExecution() throws FileNotFoundException, IOException {
         System.out.println("Execution Starts");
         getdriver(getPropertyFileValue("browser"));
@@ -36,8 +36,8 @@ public void login() throws IOException, InterruptedException {
 pom.getLoginPage().register();
     }
 
-    @Test(priority = 0)
- // @Test(enabled = false)
+  @Test(priority = 0)
+  //@Test(enabled = false)
 
   public void studentregistration() throws IOException, InterruptedException, AWTException {
     pom.getStudentRegistration().studentRegistration(readExcelData1("RegistrationForm",1,0),readExcelData1("RegistrationForm",1,1),readExcelData1("RegistrationForm",1,2),readExcelData1("RegistrationForm",1,3),readExcelData1("RegistrationForm",1,4),readExcelData1("RegistrationForm",1,5),readExcelData1("RegistrationForm",1,6),readExcelData1("RegistrationForm",1,7),readExcelData1("RegistrationForm",1,8),readExcelData1("RegistrationForm",1,9),readExcelData1("RegistrationForm",1,10),readExcelData1("RegistrationForm",1,11),readExcelData1("RegistrationForm",1,12));
@@ -63,13 +63,13 @@ pom.getEmailVerification().emaillogin(readExcelData1("EmailRegistration",1,0),re
 pom.getEmailVerification().emaillist();
     }
 
-//@Test(priority = 4)
-@Test(enabled = false)
+@Test(priority = 4)
+//@Test(enabled = false)
 
-    public void setpassword() throws IOException {
-
+    public void setpassword() throws IOException, InterruptedException {
 pom.getSetPassword().setNewPassword(readExcelData1("SetPassword",1,0),readExcelData1("SetPassword",1,1));
-    }
+    System.out.println(driver.getPageSource());
+}
 
     @Test(priority = 5)
     public void loginasstudent() throws IOException, InterruptedException {

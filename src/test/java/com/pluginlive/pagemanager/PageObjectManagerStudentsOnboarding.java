@@ -36,7 +36,7 @@ return ( loginAsStudent    == null)? loginAsStudent = new LoginAsStudent() : log
 private LoginAsStudent loginAsStudent;
 
 
-public PersonalDetails getPersonalDetails() {
+public PersonalDetails getPersonalDetails() throws IOException {
     return (personalDetails == null)? personalDetails = new PersonalDetails() : personalDetails;
 
 }
