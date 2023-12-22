@@ -29,7 +29,7 @@ public class PersonalDetails extends BaseClass {
     @FindBy (xpath = "//input[@placeholder=\"DD/MM/YYYY\"]")
     private WebElement dob;
 
-    @FindBy (xpath = "(//div[@class=\"ant-form-item sc-dGCmGc fqrVIL ant-form-item-has-success\"])[1]")
+    @FindBy (xpath = "//input[@id=\"rc_select_0\"]")
     private WebElement sex;
 
     @FindBy (xpath = "//input[@aria-activedescendant=\"rc_select_0_list_2\"]")
@@ -119,13 +119,13 @@ private WebElement checkBoxSameasPermanentAddress;
     }
 
     public void personaldetails(String RegNo, String dob, String sex, String Addressline1, String Addressline2, String Country, String State, String City, String Pincode) throws InterruptedException, AWTException, IOException {
-
-        sendkeys(getRegistrationNo(),RegNo);
+Thread.sleep(5000);
+        sendkeys(getRegistrationNo(), RegNo);
         Thread.sleep(2000);
         click(getUploadPhoto());
- Thread.sleep(3000);
+        Thread.sleep(3000);
         StringSelection ss = new StringSelection(imagePath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
         Robot r = new Robot();
         r.delay(1000);
         r.keyPress(KeyEvent.VK_CONTROL);
@@ -136,38 +136,50 @@ private WebElement checkBoxSameasPermanentAddress;
         r.delay(1000);
         r.keyPress(KeyEvent.VK_ENTER);
         r.keyRelease(KeyEvent.VK_ENTER);
- Thread.sleep(3000);
- enterKey();
-        sendkeys(getDob(),dob);
+        Thread.sleep(3000);
+        enterKey();
+        Thread.sleep(2000);
+        click(getDob());
+        Thread.sleep(5000);
+        sendkeys(getDob(), "26/06/2000");
         Thread.sleep(2000);
         enterKey();
-    click(getSex());
-    sendkeys(getSex(),sex);
-    Thread.sleep(2000);
-   enterKey();
-   scrolldown(getPermanentAddress());
-   Thread.sleep(2000);
-   sendkeys(getPermanentAddress(), Addressline1);
-        Thread.sleep(2000);
-sendkeys(getPermanentAddress2(),Addressline2);
-        Thread.sleep(2000);
-sendkeys(getCountry(),Country);
+        click(getSex());
+        Thread.sleep(5000);
+        sendkeys(getSex(), sex);
         Thread.sleep(2000);
         enterKey();
-sendkeys(getState(),State);
+        scrolldown(getPermanentAddress());
         Thread.sleep(2000);
-enterKey();
-sendkeys(getCity(),City);
+        sendkeys(getPermanentAddress(), Addressline1);
         Thread.sleep(2000);
-enterKey();
-sendkeys(getPinCode(),Pincode);
+        sendkeys(getPermanentAddress2(), Addressline2);
+        Thread.sleep(3000);
+        sendkeys(getCountry(), Country);
+        Thread.sleep(3000);
+        enterKey();
+        sendkeys(getState(), State);
+        Thread.sleep(3000);
+        enterKey();
+        sendkeys(getCity(), City);
+        Thread.sleep(3000);
+        enterKey();
+        sendkeys(getPinCode(), Pincode);
         Thread.sleep(2000);
-click(getCheckBoxSameasPermanentAddress());
+        click(getCheckBoxSameasPermanentAddress());
         Thread.sleep(2000);
-scrolldown(getSaveAndContinue());
+        scrolldown(getSaveAndContinue());
         Thread.sleep(2000);
-click(getSaveAndContinue());
+        click(getSaveAndContinue());
 
+    }
+
+    public void clickAndContinue() throws InterruptedException {
+            Thread.sleep(2000);
+            scrolldown(getSaveAndContinue());
+            Thread.sleep(2000);
+            click(getSaveAndContinue());
+        }
     }
 
 
@@ -188,4 +200,4 @@ click(getSaveAndContinue());
 
 
 
-}
+

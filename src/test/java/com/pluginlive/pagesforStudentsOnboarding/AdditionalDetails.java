@@ -79,8 +79,17 @@ public class AdditionalDetails extends BaseClass {
         return saveAndContinueButton;
     }
 
-    public void additionaldetails(String caste, String religion, String Hobbies, String lang1, String lang2, String careerobj) throws AWTException, InterruptedException {
+    public WebElement getWhatsappandmailnotification() {
+        return whatsappandmailnotification;
+    }
 
+    @FindBy (xpath = "(//button[@type=\"button\"])[2]")
+    private WebElement whatsappandmailnotification;
+
+
+    public void additionaldetails(String caste, String religion, String Hobbies, String lang1, String lang2, String careerobj) throws AWTException, InterruptedException {
+Thread.sleep(5000);
+visibilityOf(getCaste());
  sendkeys(getCaste(),caste);
  Thread.sleep(1000);
  enterKey();
@@ -101,6 +110,9 @@ click(getJoblocationAnywhere());
         sendkeys(getCareerObjective(),careerobj);
         Thread.sleep(3000);
 click(getSaveAndContinueButton());
+Thread.sleep(3000);
+click(getWhatsappandmailnotification());
+
 
 
 

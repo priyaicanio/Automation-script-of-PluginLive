@@ -30,11 +30,6 @@ public SetPassword getSetPassword() throws IOException{
 }
 private SetPassword setPassword;
 
-public LoginAsStudent getLoginAsStudent() throws IOException{
-return ( loginAsStudent    == null)? loginAsStudent = new LoginAsStudent() : loginAsStudent;
-}
-private LoginAsStudent loginAsStudent;
-
 
 public PersonalDetails getPersonalDetails() throws IOException {
     return (personalDetails == null)? personalDetails = new PersonalDetails() : personalDetails;
@@ -42,11 +37,39 @@ public PersonalDetails getPersonalDetails() throws IOException {
 }
 private PersonalDetails personalDetails;
 
+public EducationalDetails getEducationalDetails() throws IOException {
+    return (educationalDetails == null)? educationalDetails = new EducationalDetails()  : educationalDetails;
+}
+
+private EducationalDetails educationalDetails;
+
+public  ProjectAndInternship getProjectAndInternship() throws IOException {
+    return (projectAndInternship == null)? projectAndInternship = new ProjectAndInternship() : projectAndInternship;
+}
+
+private ProjectAndInternship projectAndInternship;
 
 
+public WorkExperience getWorkExperience() throws IOException {
+    return (workExperience == null )? workExperience = new WorkExperience() : workExperience;
+}
+private  WorkExperience workExperience;
 
 
+public CoursesAndTraining getCoursesAndTraining() throws IOException {
+    return (coursesAndTraining==null)? coursesAndTraining = new CoursesAndTraining() : coursesAndTraining;
+}
+private CoursesAndTraining coursesAndTraining;
 
+public ProofAndDocuments getProofAndDocuments() throws IOException {
+    return (proofAndDocuments==null)? proofAndDocuments = new ProofAndDocuments() : proofAndDocuments;
+}
+private ProofAndDocuments proofAndDocuments;
+
+public AdditionalDetails getAdditionalDetails() throws IOException {
+    return (additionalDetails == null)? additionalDetails = new AdditionalDetails() : additionalDetails;
+}
+private AdditionalDetails additionalDetails;
 
 }
 

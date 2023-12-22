@@ -18,9 +18,8 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Properties;
 
 public class BaseClass {
     public static WebDriver driver;
@@ -87,7 +86,7 @@ public class BaseClass {
 
     // visibilityof
     public void visibilityOf(WebElement element) {
-        WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
         driverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -109,8 +108,6 @@ public class BaseClass {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", element);
     }
-
-    //Javascript Sendkeys
 
 
     //getProperty
@@ -289,6 +286,7 @@ public class BaseClass {
         FileInputStream fileInputStream = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheet(sheetname);
+
         Row row = sheet.getRow(rownum);
         Cell cell = row.getCell(cellnum);
         CellType cellType = cell.getCellType();
@@ -300,7 +298,7 @@ public class BaseClass {
             case NUMERIC:
                 if (DateUtil.isCellDateFormatted(cell)) {
                     Date dateCellValue = cell.getDateCellValue();
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yy");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
                     dateFormat.format(dateCellValue);
                 } else {
                     double numericCellValue = cell.getNumericCellValue();
@@ -379,7 +377,22 @@ public class BaseClass {
         r.keyRelease(KeyEvent.VK_ENTER);
     }
 
+public void switchchildwindow() {
 
+    String mainWindowHandle = driver.getWindowHandle();
+    Set<String> allWindowHandles = driver.getWindowHandles();
+    Iterator<String> iterator = allWindowHandles.iterator();
+
+    // Here we will check if child window has other child windows and will fetch the heading of the child window
+    while (iterator.hasNext()) {
+        String ChildWindow = iterator.next();
+        if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+            driver.switchTo().window(ChildWindow);
+        }
+    }
+
+
+}
 }
 
 

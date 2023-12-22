@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class EducationalDetails extends BaseClass {
@@ -150,7 +152,11 @@ private WebElement saveAndSubmitButton;
 
 
     public void tenth(String schlname, String Board, String month, String year, String percentage, String state, String city ) throws InterruptedException, AWTException {
- sendkeys(getTenthschoolname(),schlname);
+ Thread.sleep(3000);
+        visibilityOf(getTenthschoolname());
+
+        click(getTenthschoolname());
+        sendkeys(getTenthschoolname(),schlname);
  Thread.sleep(2000);
  sendkeys(getTenthboard(),Board);
     Thread.sleep(2000);
@@ -173,13 +179,27 @@ sendkeys(getTenthCity(),city);
 enterKey();
 click(getTenthMarksheetUpload());
     Thread.sleep(2000);
-sendkeys(getTenthMarksheetUpload(),tenthMarksheetimg);
-
+        StringSelection ss = new StringSelection(tenthMarksheetimg);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Robot r = new Robot();
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+        enterKey();
 }
 
 
 public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmonth,String twelfthyear, String twelfthpercentage, String twelfthstate, String twelfthcity) throws InterruptedException, AWTException {
-    sendkeys(getTwelfthSchlName(),twelfthSchool);
+    Thread.sleep(3000);
+    click(getTwelfthSchlName());
+        sendkeys(getTwelfthSchlName(),twelfthSchool);
     Thread.sleep(2000);
     sendkeys(getTwelfthboard(),twelfthBoard);
     Thread.sleep(2000);
@@ -202,8 +222,20 @@ public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmont
     enterKey();
     click(getTwelfthUpload());
     Thread.sleep(2000);
-    sendkeys(getTwelfthUpload(),twelfthMarksheetimg);
-
+    StringSelection ss = new StringSelection(twelfthMarksheetimg);
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+    Robot r = new Robot();
+    r.delay(1000);
+    r.keyPress(KeyEvent.VK_CONTROL);
+    r.keyPress(KeyEvent.VK_V);
+    r.delay(1000);
+    r.keyRelease(KeyEvent.VK_CONTROL);
+    r.keyRelease(KeyEvent.VK_V);
+    r.delay(1000);
+    r.keyPress(KeyEvent.VK_ENTER);
+    r.keyRelease(KeyEvent.VK_ENTER);
+    Thread.sleep(3000);
+    enterKey();
 
 
 }
@@ -218,7 +250,10 @@ public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmont
 
  }
 
-
+public void clickandcontinue() throws InterruptedException {
+        Thread.sleep(3000);
+        click(getSaveAndSubmitButton());
+}
 
 
 
