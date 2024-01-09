@@ -18,6 +18,7 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
 
@@ -56,6 +57,16 @@ public class BaseClass {
     public void sendkeys(WebElement element, String data) {
         element.sendKeys(data);
     }
+
+    //Sendkeys with Date format
+    public void sendKeysWithDateFormat(WebElement element, String dateFormat, String date) {
+        // Format the date according to the desired format
+        String formattedDate = date.format(String.valueOf(DateTimeFormatter.ofPattern(dateFormat)));
+
+        // Send the formatted date to the element
+        element.sendKeys(formattedDate);
+    }
+
 
     //click
     public void click(WebElement element) {

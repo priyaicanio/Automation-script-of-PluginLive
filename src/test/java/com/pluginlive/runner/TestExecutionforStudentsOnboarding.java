@@ -88,8 +88,10 @@ pom.getPersonalDetails().personaldetails(readExcelData1("PersonalDetails",1,0),r
 
    @Test(priority = 8)
  //  @Test (enabled = false)
-   public void projectandinternship() throws IOException, InterruptedException {
-pom.getProjectAndInternship().projectandinternship();
+   public void projectandinternship() throws IOException, InterruptedException, AWTException {
+        pom.getProjectAndInternship().addproject(readExcelData1("ProjectandInternship",1,0),readExcelData1("ProjectandInternship",1,1),readExcelData1("ProjectandInternship",1,2),readExcelData1("ProjectandInternship",1,3),readExcelData1("ProjectandInternship",1,4),readExcelData1("ProjectandInternship",1,5),readExcelData1("ProjectandInternship",1,6),readExcelData1("ProjectandInternship",1,7),readExcelData1("ProjectandInternship",1,8),readExcelData1("ProjectandInternship",1,9),readExcelData1("ProjectandInternship",1,10),readExcelData1("ProjectandInternship",1,11),readExcelData1("ProjectandInternship",1,12),readExcelData1("ProjectandInternship",1,13),readExcelData1("ProjectandInternship",1,14),readExcelData1("ProjectandInternship",1,15));
+pom.getProjectAndInternship().addInternship(readExcelData1("ProjectandInternship",1,16),readExcelData1("ProjectandInternship",1,17),readExcelData1("ProjectandInternship",1,18),readExcelData1("ProjectandInternship",1,19),readExcelData1("ProjectandInternship",1,20),readExcelData1("ProjectandInternship",1,21),readExcelData1("ProjectandInternship",1,22),readExcelData1("ProjectandInternship",1,23),readExcelData1("ProjectandInternship",1,24),readExcelData1("ProjectandInternship",1,25),readExcelData1("ProjectandInternship",1,26),readExcelData1("ProjectandInternship",1,27),readExcelData1("ProjectandInternship",1,28),readExcelData1("ProjectandInternship",1,29),readExcelData1("ProjectandInternship",1,30));
+        pom.getProjectAndInternship().projectandinternship();
    }
 
 @Test (priority = 9)

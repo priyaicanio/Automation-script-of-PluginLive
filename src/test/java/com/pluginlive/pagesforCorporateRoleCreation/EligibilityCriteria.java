@@ -93,7 +93,7 @@ public class EligibilityCriteria extends BaseClass {
     @FindBy (xpath =  "//input[@id=\"mandatorySkills_mandatoryCount\"]")
     private WebElement NoofSkillsRequired;
 
-    @FindBy (xpath = "//div[@class=\"sc-dGQEGF PiPqa\"]")
+    @FindBy (xpath = "//div[@class=\"sc-PBEJI kKlkUA\"]")
     private  WebElement deleteMandatorySkill;
 
     public WebElement getDeleteMandatorySkill() {
@@ -138,7 +138,7 @@ private WebElement yearofpassing;
         return allowArrear;
     }
 
-    @FindBy(xpath = "//div[@class=\"sc-fiSPbx fVoltX\"]")
+    @FindBy(xpath = "//div[text()='Allow Arrears']")
     private WebElement allowArrear;
 
     @FindBy (xpath = "//input[@id=\"arrearCount_count\"]")

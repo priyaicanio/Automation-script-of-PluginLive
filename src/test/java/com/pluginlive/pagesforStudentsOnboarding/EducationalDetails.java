@@ -218,7 +218,7 @@ public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmont
     Thread.sleep(2000);
     enterKey();
     sendkeys(getTwefthCity(),twelfthcity);
-    Thread.sleep(2000);
+    Thread.sleep(5000);
     enterKey();
     click(getTwelfthUpload());
     Thread.sleep(2000);

@@ -41,6 +41,12 @@ public class EmailVerfication extends BaseClass {
     @FindBy(xpath = "//div[@class=\"yW\"]")
     private List<WebElement> emaillist;
 
+    public WebElement getHideexpandedCOntent() {
+        return hideexpandedCOntent;
+    }
+
+    @FindBy (xpath = "//div[@id=\":ty\"]")
+private WebElement hideexpandedCOntent;
 
     public List<WebElement> getEmaillist() {
         return emaillist;

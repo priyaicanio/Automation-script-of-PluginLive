@@ -20,7 +20,6 @@ public class PersonalDetails extends BaseClass {
 
   String  imagePath = "C:\\Users\\ICANIO-10090\\Pictures\\Profile pic.jpg";
 
-
     @FindBy (xpath = "//input[@id=\"uniRollNo\"]")
     private WebElement registrationNo;
     @FindBy (xpath = "//div[text()='Upload Photo *']")
@@ -53,11 +52,19 @@ public class PersonalDetails extends BaseClass {
     @FindBy (xpath = "//input[@aria-controls=\"rc_select_4_list\"]")
     private WebElement city;
 
+    public WebElement getSecondaryEmail() {
+        return secondaryEmail;
+    }
+
+
     @FindBy (xpath = "//input[@id=\"permPostCode\"]")
     private WebElement pinCode;
 
     @FindBy (xpath = "//input[@class=\"ant-checkbox-input\"]")
 private WebElement checkBoxSameasPermanentAddress;
+
+    @FindBy (xpath = "//input[@id=\"secondaryEmail\"]")
+    private WebElement secondaryEmail;
 
     @FindBy (xpath = "//div[text()='Save and Continue']")
     private WebElement saveAndContinue;
@@ -141,13 +148,14 @@ Thread.sleep(5000);
         Thread.sleep(2000);
         click(getDob());
         Thread.sleep(5000);
-        sendkeys(getDob(), "26/06/2000");
+        sendkeys(getDob(), "26/06/1995");
+     //   sendKeysWithDateFormat(getDob(),"DD/MM/YYYY", dob);
         Thread.sleep(2000);
         enterKey();
         click(getSex());
         Thread.sleep(5000);
         sendkeys(getSex(), sex);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         enterKey();
         scrolldown(getPermanentAddress());
         Thread.sleep(2000);

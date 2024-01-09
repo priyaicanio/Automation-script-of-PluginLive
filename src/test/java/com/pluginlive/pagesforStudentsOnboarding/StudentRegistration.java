@@ -35,31 +35,31 @@ public class StudentRegistration extends BaseClass {
     @FindBy(xpath = "//input[@value=\"other\"]")
     private WebElement currentlyUnemployedRadioButton;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_1\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_12\"]")
     private WebElement selectState;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_2\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_13\"]")
     private WebElement selectCity;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_3\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_14\"]")
     private WebElement selectCollege;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_4\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_15\"]")
     private WebElement selectDegree;
-    @FindBy(xpath = "//input[@id=\"rc_select_5\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_16\"]")
     private WebElement selectDepartment;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_6\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_17\"]")
     private WebElement specialisation;
-    @FindBy(xpath = "//input[@id=\"rc_select_7\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_18\"]")
     private WebElement startMonth;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_8\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_19\"]")
     private WebElement startYear;
-    @FindBy(xpath = "//input[@id=\"rc_select_9\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_20\"]")
     private WebElement endMonth;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_10\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_21\"]")
     private WebElement endYear;
 
     @FindBy(xpath = "//*[text()='Submit']")
@@ -137,7 +137,8 @@ public class StudentRegistration extends BaseClass {
         return submitButton;
     }
 
-    @FindBy(xpath = "//div[@class=\"sc-fmRtwQ fnsVzQ\"]")
+   // @FindBy(xpath = "//div[@class=\"sc-fmRtwQ kIYJuE\"]//following-sibling::div")
+    @FindBy (xpath = "//div[contains(text(), 'Thank you')]")
     private WebElement registrationSuccessMsg;
 
     public WebElement getRegistrationSuccessMsg() {

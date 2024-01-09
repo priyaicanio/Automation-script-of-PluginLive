@@ -12,7 +12,7 @@ public class DashboardPage extends BaseClass {
         super();
         PageFactory.initElements(driver,this);
     }
-    @FindBy(xpath = "//h2[@class=\"sc-ceyiOL ktkpRv\"]")
+    @FindBy(xpath = "//h2[@class=\"sc-gttrqr fOqHqs\"]")
     private WebElement loginsuccessmsg;
     @FindBy(xpath = "(//li[@role='menuitem'])[1]")
     private WebElement selectDashboard;
