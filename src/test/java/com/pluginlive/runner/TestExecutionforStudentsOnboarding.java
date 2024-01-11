@@ -103,13 +103,15 @@ pom.getWorkExperience().workexperience();
 
 @Test (priority = 10)
 //    @Test (enabled = false)
-    public void coursesandtraining() throws IOException, InterruptedException {
+    public void coursesandtraining() throws IOException, InterruptedException, AWTException {
+pom.getCoursesAndTraining().addcourseandtraining(readExcelData1("CoursesAndTraining",1,0),readExcelData1("CoursesAndTraining",1,1),readExcelData1("CoursesAndTraining",1,2),readExcelData1("CoursesAndTraining",1,3),readExcelData1("CoursesAndTraining",1,4),readExcelData1("CoursesAndTraining",1,5),readExcelData1("CoursesAndTraining",1,6),readExcelData1("CoursesAndTraining",1,7),readExcelData1("CoursesAndTraining",1,8),readExcelData1("CoursesAndTraining",1,9));
 pom.getCoursesAndTraining().coursesandtraining();
 }
 
 @Test (priority = 11)
 //@Test (enabled = false)
-    public void proofanddocuments() throws IOException, InterruptedException {
+    public void proofanddocuments() throws IOException, InterruptedException, AWTException {
+        pom.getProofAndDocuments().addingproofanddocument();
 pom.getProofAndDocuments().proofanddocument();
 }
 

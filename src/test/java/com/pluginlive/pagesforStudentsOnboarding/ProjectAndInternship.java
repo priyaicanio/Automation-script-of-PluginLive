@@ -324,7 +324,7 @@ public void addInternship(String interncompany,String internstartMonth,String in
     click(getAddinternship());
         Thread.sleep(3000);
         sendkeys(getInterncompanyName(),interncompany);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         enterKey();
         Thread.sleep(2000);
         sendkeys(getInternstartMonth(),internstartMonth);

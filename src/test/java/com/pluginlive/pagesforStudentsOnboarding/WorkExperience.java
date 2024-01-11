@@ -189,12 +189,14 @@ public class WorkExperience extends BaseClass {
 
 public void experienceandaward(String Jobtitle,String Companyname,String Startmonth, String Startyear,String Noticeperiod, String Function, String Role, String Industry, String Description,String Skill1,String Skill2, String Skill3, String Awardname , String AwardReceivedname, String AwardDescription) throws InterruptedException, AWTException {
  Thread.sleep(2000);
+ click(getAddWorkExperiencebutton());
+    Thread.sleep(2000);
         sendkeys(getExperienceJobTitle(),Jobtitle);
         Thread.sleep(1000);
         enterKey();
     Thread.sleep(1000);
   sendkeys(getExperienceCompanyName(),Companyname);
-    Thread.sleep(1000);
+    Thread.sleep(3000);
     enterKey();
     Thread.sleep(1000);
 click(getFulltimeJobType());

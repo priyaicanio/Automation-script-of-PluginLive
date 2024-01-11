@@ -14,10 +14,10 @@ public class AdditionalDetails extends BaseClass {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy (xpath = "//input[@id='rc_select_41']")
+    @FindBy (xpath = "//input[@id='rc_select_63']")
     private WebElement caste;
 
-    @FindBy (xpath = "//input[@id='rc_select_42']")
+    @FindBy (xpath = "//input[@id='rc_select_64']")
     private WebElement religion;
 
     @FindBy (xpath = "//input[@id=\"hobbie_0\"]")

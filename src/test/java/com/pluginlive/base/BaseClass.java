@@ -309,8 +309,8 @@ public class BaseClass {
             case NUMERIC:
                 if (DateUtil.isCellDateFormatted(cell)) {
                     Date dateCellValue = cell.getDateCellValue();
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
-                    dateFormat.format(dateCellValue);
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    res = dateFormat.format(dateCellValue);
                 } else {
                     double numericCellValue = cell.getNumericCellValue();
                     long check = Math.round(numericCellValue);
