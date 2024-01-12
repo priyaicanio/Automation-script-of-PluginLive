@@ -31,16 +31,16 @@ public class CoursesAndTraining extends BaseClass {
     @FindBy (xpath = "//input[@id=\"course_0_organization\"]")
     private WebElement institutename;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_58\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_60\"]")
     private WebElement courseStartMonth ;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_59\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_61\"]")
     private WebElement courseStartYear;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_60\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_62\"]")
     private WebElement courseEndMonth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_61\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_63\"]")
     private WebElement courseEndYear;
 
     @FindBy(xpath = "//input[@id=\"course_0_title\"]")
@@ -49,7 +49,7 @@ public class CoursesAndTraining extends BaseClass {
     @FindBy (xpath = "//div[@aria-label=\"Enter Your Description here...\"]")
     private WebElement CourseDescription;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_62\"]")
+    @FindBy (xpath = "//input[@id=\"rc_select_64\"]")
     private WebElement CourseSkills;
 
     @FindBy (xpath = "//div[text()='Upload File']")

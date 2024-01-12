@@ -44,7 +44,7 @@ public class ProofAndDocuments extends BaseClass {
     @FindBy (xpath = "//input[@value=\"passport\"]")
     private WebElement AddressproofPassport;
 
-    @FindBy (xpath = "(//div[text()='Upload File'])[2]")
+    @FindBy (xpath = "//div[text()='Upload File']")
     private WebElement AddressproofUpload;
 
     public WebElement getIDproofDrivingLicense() {
@@ -82,8 +82,6 @@ public class ProofAndDocuments extends BaseClass {
 
 public void addingproofanddocument() throws InterruptedException, AWTException {
     Thread.sleep(2000);
-click(getIDproofDrivingLicense());
-    Thread.sleep(2000);
 click(getIDproofUploadButton());
     Thread.sleep(2000);
     StringSelection ss = new StringSelection(IDproof);
@@ -100,24 +98,24 @@ click(getIDproofUploadButton());
     r.keyRelease(KeyEvent.VK_ENTER);
     Thread.sleep(3000);
     enterKey();
+    Thread.sleep(2000);
 
-    Thread.sleep(2000);
-    click(getAddressproofPANCARD());
-    Thread.sleep(2000);
+
+
     click(getAddressproofUpload());
     Thread.sleep(2000);
     StringSelection ss1 = new StringSelection(Addressproof);
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss1,null);
     Robot r1 = new Robot();
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_CONTROL);
-    r.keyPress(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyRelease(KeyEvent.VK_CONTROL);
-    r.keyRelease(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_ENTER);
-    r.keyRelease(KeyEvent.VK_ENTER);
+    r1.delay(1000);
+    r1.keyPress(KeyEvent.VK_CONTROL);
+    r1.keyPress(KeyEvent.VK_V);
+    r1.delay(1000);
+    r1.keyRelease(KeyEvent.VK_CONTROL);
+    r1.keyRelease(KeyEvent.VK_V);
+    r1.delay(1000);
+    r1.keyPress(KeyEvent.VK_ENTER);
+    r1.keyRelease(KeyEvent.VK_ENTER);
     Thread.sleep(3000);
     enterKey();
 
