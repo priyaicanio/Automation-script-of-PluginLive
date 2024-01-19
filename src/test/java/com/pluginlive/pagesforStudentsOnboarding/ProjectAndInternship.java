@@ -1,7 +1,6 @@
 package com.pluginlive.pagesforStudentsOnboarding;
 
 import com.pluginlive.base.BaseClass;
-import org.apache.poi.xddf.usermodel.text.XDDFBodyProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +22,7 @@ public class ProjectAndInternship extends BaseClass {
         return saveAndContinueButton;
     }
 
-    String cerificateimg = readExcelData1("ProjectandInternship",1,15);
+    String certificateimg = readExcelData1("ProjectandInternship",1,15);
     String internshipcertificate = readExcelData1("ProjectandInternship",1,30);
 
     @FindBy (xpath = "//div[text()='Save & Continue']")
@@ -301,7 +300,7 @@ Thread.sleep(1000);
 
         click(getUpload());
         Thread.sleep(2000);
-        StringSelection ss = new StringSelection(cerificateimg);
+        StringSelection ss = new StringSelection(certificateimg);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
         Robot r = new Robot();
         r.delay(1000);

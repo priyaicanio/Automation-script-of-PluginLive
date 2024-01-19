@@ -1,16 +1,11 @@
 package com.pluginlive.pagesforStudentsOnboarding;
 
 import com.pluginlive.base.BaseClass;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 public class SetPassword extends BaseClass {
     public SetPassword() throws IOException {

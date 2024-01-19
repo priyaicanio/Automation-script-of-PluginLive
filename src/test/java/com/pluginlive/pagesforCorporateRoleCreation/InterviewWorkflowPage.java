@@ -149,25 +149,21 @@ private  WebElement closeButton;
         return searchCollege;
     }
 
-    @FindBy (xpath = "//button[@id=\"00e3ac09-4554-44f2-a5b8-769a6bf92499\"]")
+    @FindBy (xpath = "//span[text()='Select']")
     private WebElement selectButton1;
-    @FindBy (xpath = "//button[@id=\"96cb3d3a-50ee-4231-ae06-b54c3ea42ba2\"]")
-    private WebElement selectButton2;
+   // @FindBy (xpath = "//button[@id=\"96cb3d3a-50ee-4231-ae06-b54c3ea42ba2\"]")
+   // private WebElement selectButton2;
 
-    @FindBy (xpath = "//button[@id=\"c8f17b0e-9ceb-4da9-b896-3c38df5287bd\"]")
-    private WebElement selectButton3;
+   // @FindBy (xpath = "//button[@id=\"c8f17b0e-9ceb-4da9-b896-3c38df5287bd\"]")
+    //private WebElement selectButton3;
 
     public WebElement getSelectButton1() {
         return selectButton1;
     }
 
-    public WebElement getSelectButton2() {
-        return selectButton2;
-    }
+  //  public WebElement getSelectButton2() {return selectButton2;}
 
-    public WebElement getSelectButton3() {
-        return selectButton3;
-    }
+  //  public WebElement getSelectButton3() {return selectButton3;}
 
     public WebElement getPublish() {
         return publish;
@@ -230,8 +226,8 @@ Thread.sleep(2000);
 sendkeys(getSearchCollege(),clgName);
 Thread.sleep(2000);
 click(getSelectButton1());
-click(getSelectButton2());
-click(getSelectButton3());
+//click(getSelectButton2());
+//click(getSelectButton3());
 Thread.sleep(1000);
 click(getConfirmButton());
 Thread.sleep(2000);
