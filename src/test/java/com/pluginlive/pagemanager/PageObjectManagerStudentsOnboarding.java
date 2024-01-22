@@ -71,6 +71,13 @@ public AdditionalDetails getAdditionalDetails() throws IOException {
 }
 private AdditionalDetails additionalDetails;
 
+public UploadResume getUploadResume() throws IOException {
+    return (uploadResume == null)? uploadResume = new UploadResume() : uploadResume;
+}
+
+private UploadResume uploadResume;
+
+
 }
 
 

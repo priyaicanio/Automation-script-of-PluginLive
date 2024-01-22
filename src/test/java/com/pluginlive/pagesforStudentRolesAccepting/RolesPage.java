@@ -36,21 +36,20 @@ public class RolesPage extends BaseClass {
     @FindBy (xpath = "//div[text()=\"Apply\"]")
 private WebElement applyButton;
 
+    @FindBy (xpath = "//div[text()='Continue']")
+private WebElement ContinueButton;
 
-    public WebElement getUpdateButton() {
-        return updateButton;
+    public WebElement getContinueButton() {
+        return ContinueButton;
     }
 
-    @FindBy (xpath = "//div[text()='Update Now']")
-private WebElement updateButton;
-
-    public void RoleSearch() throws InterruptedException {
+    public void RoleSearch(String search) throws InterruptedException {
 implicitywait();
 
         Thread.sleep(2000);
         click(getRoleSearch());
         Thread.sleep(2000);
-sendkeys(getRoleSearch(),"Quality Roles");
+sendkeys(getRoleSearch(),search);
     }
 
     public void RoleList() throws InterruptedException {
@@ -71,7 +70,7 @@ sendkeys(getRoleSearch(),"Quality Roles");
         Thread.sleep(2000);
         click(getApplyButton());
         Thread.sleep(3000);
-click(getUpdateButton());
+click(getContinueButton());
     }
 
 

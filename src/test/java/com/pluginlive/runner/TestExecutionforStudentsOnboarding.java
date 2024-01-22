@@ -71,13 +71,17 @@ pom.getSetPassword().setNewPassword(readExcelData1("SetPassword",1,0),readExcelD
 }
 
 @Test (priority = 6)
+public void resumeupload() throws IOException, InterruptedException, AWTException {
+pom.getUploadResume().resume();
+}
+@Test (priority = 7)
 //@Test(enabled = false)
 public void personaldetails() throws IOException, InterruptedException, AWTException {
 pom.getPersonalDetails().personaldetails(readExcelData1("PersonalDetails",1,0),readExcelData1("PersonalDetails",1,1),readExcelData1("PersonalDetails",1,2),readExcelData1("PersonalDetails",1,3),readExcelData1("PersonalDetails",1,4),readExcelData1("PersonalDetails",1,5),readExcelData1("PersonalDetails",1,6),readExcelData1("PersonalDetails",1,7),readExcelData1("PersonalDetails",1,8));
 //pom.getPersonalDetails().clickAndContinue();
     }
 
-@Test(priority = 7)
+@Test(priority = 8)
     public void educationaldetails() throws IOException, InterruptedException, AWTException {
 
         pom.getEducationalDetails().tenth(readExcelData1("EducationalDetails",1,0),readExcelData1("EducationalDetails",1,1),readExcelData1("EducationalDetails",1,2),readExcelData1("EducationalDetails",1,3),readExcelData1("EducationalDetails",1,4),readExcelData1("EducationalDetails",1,5),readExcelData1("EducationalDetails",1,6));
@@ -86,7 +90,7 @@ pom.getPersonalDetails().personaldetails(readExcelData1("PersonalDetails",1,0),r
   // pom.getEducationalDetails().clickandcontinue();
     }
 
-   @Test(priority = 8)
+   @Test(priority = 9)
  //  @Test (enabled = false)
    public void projectandinternship() throws IOException, InterruptedException, AWTException {
         pom.getProjectAndInternship().addproject(readExcelData1("ProjectandInternship",1,0),readExcelData1("ProjectandInternship",1,1),readExcelData1("ProjectandInternship",1,2),readExcelData1("ProjectandInternship",1,3),readExcelData1("ProjectandInternship",1,4),readExcelData1("ProjectandInternship",1,5),readExcelData1("ProjectandInternship",1,6),readExcelData1("ProjectandInternship",1,7),readExcelData1("ProjectandInternship",1,8),readExcelData1("ProjectandInternship",1,9),readExcelData1("ProjectandInternship",1,10),readExcelData1("ProjectandInternship",1,11),readExcelData1("ProjectandInternship",1,12),readExcelData1("ProjectandInternship",1,13),readExcelData1("ProjectandInternship",1,14),readExcelData1("ProjectandInternship",1,15));
@@ -94,28 +98,28 @@ pom.getProjectAndInternship().addInternship(readExcelData1("ProjectandInternship
         pom.getProjectAndInternship().projectandinternship();
    }
 
-@Test (priority = 9)
+@Test (priority = 10)
 //  @Test (enabled = false)
     public void workexperience() throws IOException, InterruptedException, AWTException {
         pom.getWorkExperience().experienceandaward(readExcelData1("WorkExperience",1,0),readExcelData1("WorkExperience",1,1),readExcelData1("WorkExperience",1,2),readExcelData1("WorkExperience",1,3),readExcelData1("WorkExperience",1,4),readExcelData1("WorkExperience",1,5),readExcelData1("WorkExperience",1,6),readExcelData1("WorkExperience",1,7),readExcelData1("WorkExperience",1,8),readExcelData1("WorkExperience",1,9),readExcelData1("WorkExperience",1,10),readExcelData1("WorkExperience",1,11),readExcelData1("WorkExperience",1,12),readExcelData1("WorkExperience",1,13),readExcelData1("WorkExperience",1,14));
 pom.getWorkExperience().workexperience();
 }
 
-@Test (priority = 10)
+@Test (priority = 11)
 //    @Test (enabled = false)
     public void coursesandtraining() throws IOException, InterruptedException, AWTException {
 pom.getCoursesAndTraining().addcourseandtraining(readExcelData1("CoursesAndTraining",1,0),readExcelData1("CoursesAndTraining",1,1),readExcelData1("CoursesAndTraining",1,2),readExcelData1("CoursesAndTraining",1,3),readExcelData1("CoursesAndTraining",1,4),readExcelData1("CoursesAndTraining",1,5),readExcelData1("CoursesAndTraining",1,6),readExcelData1("CoursesAndTraining",1,7),readExcelData1("CoursesAndTraining",1,8),readExcelData1("CoursesAndTraining",1,9));
 pom.getCoursesAndTraining().coursesandtraining();
 }
 
-@Test (priority = 11)
+@Test (priority = 12)
 //@Test (enabled = false)
     public void proofanddocuments() throws IOException, InterruptedException, AWTException {
         pom.getProofAndDocuments().addingproofanddocument();
 pom.getProofAndDocuments().proofanddocument();
 }
 
-@Test (priority = 12)
+@Test (priority = 13)
 //    @Test (enabled = false)
     public void additionaldetails() throws IOException, InterruptedException, AWTException {
 pom.getAdditionalDetails().additionaldetails(readExcelData1("AdditionalDetails",1,0),readExcelData1("AdditionalDetails",1,1),readExcelData1("AdditionalDetails",1,2),readExcelData1("AdditionalDetails",1,3),readExcelData1("AdditionalDetails",1,4),readExcelData1("AdditionalDetails",1,5));

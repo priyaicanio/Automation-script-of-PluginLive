@@ -3,6 +3,8 @@ package com.pluginlive.runner;
 import com.pluginlive.base.BaseClass;
 import com.pluginlive.pagemanager.PageObjectManagerStudentRolesAccepting;
 import com.pluginlive.pagesforStudentRolesAccepting.LoginPage;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.awt.*;
@@ -40,9 +42,8 @@ public class TestExecutionforStudentRolesAccepting extends BaseClass {
 @DataProvider(name = "studentCredentials")
     public Object[][] data(){
         return new Object[][]{
-   // {"priya.t+student60@icanio.com","Priya@2606"},
-    //{"priya.t+student61@icanio.com","Priya@2606"},
-    {"priya.t+student64@icanio.com","Priya@2606"}};
+
+    {"priya.t+student60@icanio.com","Priya@2606"}};
     }
 
 @Test(priority = 1)
@@ -52,12 +53,34 @@ public void roles() throws IOException, InterruptedException {
 
 @Test(priority = 2)
     public void roleapply() throws IOException, InterruptedException {
-        pom.getRolesPage().RoleSearch();
+        pom.getRolesPage().RoleSearch(readExcelData1("ApplyRole",1,0));
         pom.getRolesPage().RoleList();
 }
 
+@Test(priority = 3)
+    public void addquestionnaire() throws IOException, InterruptedException {
+        pom.getQuesionnairePage().questionnaire();
+}
 
+@Test (priority = 4)
+    public void feedbackforapplyingjob() throws IOException, InterruptedException, AWTException {
+        pom.getFeedbackPage().feedback(readExcelData1("Feedback",1,0));
+        pom.getFeedbackPage().feedbackform(readExcelData1("Feedback",1,1));
 
+}
+
+@Test(priority = 5)
+public void appliedMsg() throws IOException {
+    String actualText = "You Applied Successfully !";
+    WebElement excepted =   pom.getFeedbackPage().getAppliedsuccessfullmsg();
+    String exceptedText = excepted.getText();
+    Assert.assertEquals(actualText, exceptedText);
+}
+
+@Test (priority = 6)
+    public void done() throws IOException {
+        pom.getFeedbackPage().getDoneButton();
+}
 
 
 }

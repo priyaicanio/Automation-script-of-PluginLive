@@ -1,9 +1,7 @@
 package com.pluginlive.pagemanager;
 
 
-import com.pluginlive.pagesforStudentRolesAccepting.HomePage;
-import com.pluginlive.pagesforStudentRolesAccepting.LoginPage;
-import com.pluginlive.pagesforStudentRolesAccepting.RolesPage;
+import com.pluginlive.pagesforStudentRolesAccepting.*;
 
 import java.io.IOException;
 
@@ -25,4 +23,13 @@ public RolesPage getRolesPage() throws IOException {
 }
 private RolesPage rolesPage;
 
+ public QuestionnairePage getQuesionnairePage() throws IOException {
+     return (questionnairePage == null)? questionnairePage = new QuestionnairePage() : questionnairePage;
+ }
+private QuestionnairePage questionnairePage;
+
+public FeedbackPage getFeedbackPage() throws IOException {
+    return (feedbackPage == null)? feedbackPage = new FeedbackPage() : feedbackPage;
+}
+private FeedbackPage feedbackPage;
 }
