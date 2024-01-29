@@ -368,8 +368,14 @@ public class BaseClass {
         driver.close();
     }
 
-    //clearText
-    public void clear(WebElement element) {
+    //To clear tghe selected Text
+    public String clearAndReturnPreviousText(WebElement element) {
+        String previousText = element.getText();
+        element.clear();
+        return previousText;
+    }
+//To clear
+    public void clear(WebElement element){
         element.clear();
     }
 

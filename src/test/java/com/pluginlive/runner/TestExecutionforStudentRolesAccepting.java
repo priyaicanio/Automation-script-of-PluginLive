@@ -35,25 +35,27 @@ public class TestExecutionforStudentRolesAccepting extends BaseClass {
     }
 
  @Test (dataProvider = "studentCredentials")
-    public void loginAsStudent(String userName, String password) throws IOException, InterruptedException, AWTException {
+    public void testRolesAcceptingFlow(String userName, String password) throws IOException, InterruptedException, AWTException {
      System.out.println("Login process begins");
      pom.getLoginPage().Login(userName,password);
  }
-@DataProvider(name = "studentCredentials")
+
+    @DataProvider(name = "studentCredentials")
     public Object[][] data(){
         return new Object[][]{
 
-    {"priya.t+student60@icanio.com","Priya@2606"}};
+                {"priya.t+studentrolecreation14@icanio.com","Priya@2606"},
+                  };
     }
 
-@Test(priority = 1)
+    @Test(priority = 1)
 public void roles() throws IOException, InterruptedException {
         pom.getHomePage().rolesbutton();
 }
 
 @Test(priority = 2)
     public void roleapply() throws IOException, InterruptedException {
-        pom.getRolesPage().RoleSearch(readExcelData1("ApplyRole",1,0));
+        pom.getRolesPage().RoleSearch(readExcelData1("Feedback",1,0));
         pom.getRolesPage().RoleList();
 }
 
@@ -64,8 +66,8 @@ public void roles() throws IOException, InterruptedException {
 
 @Test (priority = 4)
     public void feedbackforapplyingjob() throws IOException, InterruptedException, AWTException {
-        pom.getFeedbackPage().feedback(readExcelData1("Feedback",1,0));
-        pom.getFeedbackPage().feedbackform(readExcelData1("Feedback",1,1));
+        pom.getFeedbackPage().feedback(readExcelData1("Feedback",1,1));
+        pom.getFeedbackPage().feedbackform(readExcelData1("Feedback",1,2));
 
 }
 

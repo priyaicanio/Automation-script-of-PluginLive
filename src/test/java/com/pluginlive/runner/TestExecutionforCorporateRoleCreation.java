@@ -58,7 +58,7 @@ pom.getLoginPage().negativeloginscenario();
         implicitywait();
         WebElement actual = pom.getDashboardPage().getLoginsuccessmsg();
         String actualText = actual.getText();
-        String exceptedText = "Hello, priya";
+        String exceptedText = "Hello, Priya";
         Assert.assertEquals(exceptedText, actualText);
     }
 
@@ -115,6 +115,8 @@ pom.getNewRoleCTCandJobLocation().ctcandJobLocation(readExcelData("CTCandJobLoca
         Thread.sleep(3000);
         pom.getEligibilityCriteria().eligibilityCriteria(readExcelData("EligibilityCriteria",1,0),readExcelData("EligibilityCriteria",1,1),readExcelData("EligibilityCriteria",1,2),readExcelData("EligibilityCriteria",1,3),readExcelData("EligibilityCriteria",1,4),readExcelData("EligibilityCriteria",1,5),readExcelData("EligibilityCriteria",1,6),readExcelData("EligibilityCriteria",1,7),readExcelData("EligibilityCriteria",1,8),readExcelData("EligibilityCriteria",1,9),readExcelData("EligibilityCriteria",1,10),readExcelData("EligibilityCriteria",1,11),readExcelData("EligibilityCriteria",1,12));
     }
+
+
 
     @Test(priority = 7)
   //@Test(enabled = false)

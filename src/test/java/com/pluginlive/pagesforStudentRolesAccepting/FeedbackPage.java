@@ -97,7 +97,10 @@ private WebElement starRating;
 
 public void applydone() throws InterruptedException {
         Thread.sleep(2000);
-        click(getDoneButton());
+        switchchildwindow();
+    Thread.sleep(2000);
+
+    click(getDoneButton());
 }
 
 

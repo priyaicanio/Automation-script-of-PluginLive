@@ -175,7 +175,7 @@ private WebElement internshipUpdatebutton;
         return internOutside;
     }
 
-    @FindBy (xpath = "//div[@class=\"sc-aXZVg sc-fDpJdc kcDXFM dcSNFf\"]")
+    @FindBy (xpath = "//div[@class=\"sc-aXZVg sc-fDpJdc kcDXFM eeIjhl\"]")
     private WebElement internOutside;
 
     public WebElement getAddinternship() {

@@ -85,7 +85,7 @@ pom.getPersonalDetails().personaldetails(readExcelData1("PersonalDetails",1,0),r
     public void educationaldetails() throws IOException, InterruptedException, AWTException {
 
         pom.getEducationalDetails().tenth(readExcelData1("EducationalDetails",1,0),readExcelData1("EducationalDetails",1,1),readExcelData1("EducationalDetails",1,2),readExcelData1("EducationalDetails",1,3),readExcelData1("EducationalDetails",1,4),readExcelData1("EducationalDetails",1,5),readExcelData1("EducationalDetails",1,6));
-        pom.getEducationalDetails().twelfth(readExcelData1("EducationalDetails",1,7),readExcelData1("EducationalDetails",1,8),readExcelData1("EducationalDetails",1,9),readExcelData1("EducationalDetails",1,10),readExcelData1("EducationalDetails",1,11),readExcelData1("EducationalDetails",1,12),readExcelData1("EducationalDetails",1,13));
+        pom.getEducationalDetails().twelfth(readExcelData1("EducationalDetails",1,7),readExcelData1("EducationalDetails",1,8),readExcelData1("EducationalDetails",1,9),readExcelData1("EducationalDetails",1,10),readExcelData1("EducationalDetails",1,11),readExcelData1("EducationalDetails",1,12),readExcelData1("EducationalDetails",1,13),readExcelData1("EducationalDetails",1,14));
  pom.getEducationalDetails().ug(readExcelData1("EducationalDetails",1,14));
   // pom.getEducationalDetails().clickandcontinue();
     }

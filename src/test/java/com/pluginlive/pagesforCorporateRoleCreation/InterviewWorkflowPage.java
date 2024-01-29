@@ -213,6 +213,7 @@ private  WebElement closeButton;
         sendkeys(getRoundDescription(),Round3Description);
         Thread.sleep(3000);
   click(getAddRoundName());
+        click(getAddRoundName());
 
 // Publishing the role
         click(getPreviewAndPublish());

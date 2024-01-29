@@ -196,7 +196,7 @@ click(getTenthMarksheetUpload());
 }
 
 
-public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmonth,String twelfthyear, String twelfthpercentage, String twelfthstate, String twelfthcity) throws InterruptedException, AWTException {
+public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmonth,String twelfthyear, String twelfthpercentage,String twelfthSkills, String twelfthstate, String twelfthcity) throws InterruptedException, AWTException {
     Thread.sleep(3000);
     click(getTwelfthSchlName());
         sendkeys(getTwelfthSchlName(),twelfthSchool);
@@ -213,6 +213,8 @@ public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmont
     selectall();
     Thread.sleep(2000);
     sendkeys(getTwefthPercentage(),twelfthpercentage);
+    Thread.sleep(2000);
+    sendkeys(getTwelfthSkills(),twelfthSkills);
     Thread.sleep(2000);
     sendkeys(getTwelfthState(),twelfthstate);
     Thread.sleep(2000);

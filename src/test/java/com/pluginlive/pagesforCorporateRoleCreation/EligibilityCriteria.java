@@ -1,11 +1,15 @@
 package com.pluginlive.pagesforCorporateRoleCreation;
 
 import com.pluginlive.base.BaseClass;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.jws.WebMethod;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 
@@ -61,7 +65,7 @@ public class EligibilityCriteria extends BaseClass {
     }
 
 
-    @FindBy (xpath = "(//input[@value='AND'])[1]")
+    @FindBy (xpath = "(//input[@value='OR'])[1]")
     private WebElement primarymandatoryAndSkills;
 
     @FindBy (xpath = "(//input[@value='OR'])[1]")
@@ -155,8 +159,27 @@ private WebElement eligibilityButton;
         return eligibilityButton;
     }
 
+    public WebElement getSwitchclose() {
+        return switchclose;
+    }
+
+    @FindBy (xpath = "//span[@class=\"ant-select-tree-switcher ant-select-tree-switcher_close\"]")
+    private WebElement switchclose;
+
     @FindBy (xpath = "//div[@Class='sc-eDvSVe sc-cPIbRQ dEWiNF esUDZh']")
     private WebElement outside;
+    @FindBy (xpath ="//div[@class=\"sc-eDvSVe sc-kmXbIF dEWiNF bWouR\"]")
+    private WebElement degreeOutside;
+@FindBy (xpath = "//div[@class=\"sc-eDvSVe sc-cPIbRQ hKFhkR iwCRKI\"]")
+private WebElement pageup;
+
+    public WebElement getPageup() {
+        return pageup;
+    }
+
+    public WebElement getDegreeOutside() {
+        return degreeOutside;
+    }
 
     public WebElement getOutside() {
         return outside;
@@ -175,6 +198,8 @@ Thread.sleep(1000);
 sendkeys(getDegreevalue(),degree);
 Thread.sleep(2000);
 keydown();
+        Thread.sleep(2000);
+        keydown();
 Thread.sleep(1000);
 
 //specialisation
@@ -228,7 +253,6 @@ Thread.sleep(1000);
 // No of skills required
       click(getNoofSkillsRequired());
       sendkeys(getNoofSkillsRequired(),"1");
-      click(getDeleteMandatorySkill());
 
  //Year of Passing
 click(getYearofpassing());
@@ -250,13 +274,13 @@ enterKey();
 
 //Score
 click(getAveragescore());
-sendkeys(getAveragescore(),"60");
+sendkeys(getAveragescore(),"40");
 
 //Allow Arrear
         Thread.sleep(2000);
      click(getAllowArrear());
      clear(getArrearValue());
-     sendkeys(getArrearValue(),"2");
+     sendkeys(getArrearValue(),"1");
 
 
 
