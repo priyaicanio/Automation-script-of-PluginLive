@@ -14,27 +14,28 @@ public class EducationalDetails extends BaseClass {
 
     public EducationalDetails() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     String tenthMarksheetimg = "C:\\Users\\ICANIO-10090\\Pictures\\10th Marksheet.jpg";
- String twelfthMarksheetimg = "C:\\Users\\ICANIO-10090\\Pictures\\12th Marksheet.jpg";
-    @FindBy (xpath = "//input[@id=\"tenth_institutionName\"]")
+    String twelfthMarksheetimg = "C:\\Users\\ICANIO-10090\\Pictures\\12th Marksheet.jpg";
+    @FindBy(xpath = "//input[@id=\"tenth_institutionName\"]")
     private WebElement tenthschoolname;
-@FindBy (xpath = "//input[@id=\"rc_select_8\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_32\"]")
     private WebElement tenthboard;
 
-@FindBy (xpath = "//input[@id=\"rc_select_9\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_33\"]")
     private WebElement tenthmonth;
-@FindBy (xpath = "//input[@id=\"rc_select_10\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_34\"]")
     private WebElement tenthYear;
-@FindBy (xpath = "//input[@id=\"tenth_marks\"]")
-private WebElement tenthpercentage;
+    @FindBy(xpath = "//input[@id=\"tenth_marks\"]")
+    private WebElement tenthpercentage;
 
-@FindBy (xpath = "//input[@id=\"rc_select_11\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_35\"]")
+
     private WebElement tenthState;
 
-@FindBy (xpath = "//input[@id=\"rc_select_12\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_36\"]")
     private WebElement tenthCity;
 
     public WebElement getTenthschoolname() {
@@ -69,31 +70,31 @@ private WebElement tenthpercentage;
         return tenthMarksheetUpload;
     }
 
-    @FindBy (xpath = "(//div[text()='Upload File'])[1]")
+    @FindBy(xpath = "(//div[text()='Upload File'])[1]")
     private WebElement tenthMarksheetUpload;
 
 
-    @FindBy (xpath = "//input[@id=\"twelfth_institutionName\"]")
+    @FindBy(xpath = "//input[@id=\"twelfth_institutionName\"]")
     private WebElement twelfthSchlName;
-    @FindBy (xpath = "//input[@id=\"rc_select_13\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_37\"]")
     private WebElement twelfthboard;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_14\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_38\"]")
     private WebElement twelfthMonth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_15\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_39\"]")
     private WebElement twelfthYear;
 
-    @FindBy (xpath = "//input[@id=\"twelfth_marks\"]")
+    @FindBy(xpath = "//input[@id=\"twelfth_marks\"]")
     private WebElement twefthPercentage;
 
-    @FindBy (xpath = "(//span[text()='Eg.React.js'])[1]")
+    @FindBy(xpath = "//input[@id=\"rc_select_40\"]")
     private WebElement twelfthSkills;
-    @FindBy (xpath = "//input[@id=\"rc_select_17\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_41\"]")
     private WebElement twelfthState;
-    @FindBy (xpath = "//input[@id=\"rc_select_18\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_42\"]")
     private WebElement twefthCity;
-    @FindBy (xpath = "//div[text()='Upload File']")
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement twelfthUpload;
 
     public String getTenthMarksheetimg() {
@@ -140,47 +141,54 @@ private WebElement tenthpercentage;
         return ugPercentage;
     }
 
-    @FindBy (xpath = "//input[@id=\"ug_0_averageMarks\"]")
-private WebElement ugPercentage;
+    @FindBy(xpath = "//input[@id=\"ug_0_averageMarks\"]")
+    private WebElement ugPercentage;
+
+    @FindBy(xpath = "//input[@id=\"rc_select_54\"]")
+    private WebElement ugSkills;
+
+    public WebElement getUgSkills() {
+        return ugSkills;
+    }
 
     public WebElement getSaveAndSubmitButton() {
         return saveAndSubmitButton;
     }
 
-    @FindBy (xpath = "//button[@type=\"submit\"]")
-private WebElement saveAndSubmitButton;
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    private WebElement saveAndSubmitButton;
 
 
-    public void tenth(String schlname, String Board, String month, String year, String percentage, String state, String city ) throws InterruptedException, AWTException {
- Thread.sleep(3000);
+    public void tenth(String schlname, String Board, String month, String year, String percentage, String state, String city) throws InterruptedException, AWTException {
+        Thread.sleep(3000);
         visibilityOf(getTenthschoolname());
 
         click(getTenthschoolname());
-        sendkeys(getTenthschoolname(),schlname);
- Thread.sleep(2000);
- sendkeys(getTenthboard(),Board);
-    Thread.sleep(2000);
-sendkeys(getTenthmonth(),month);
-    Thread.sleep(2000);
-enterKey();
-sendkeys(getTenthYear(),year);
-    Thread.sleep(2000);
-    enterKey();
-click(getTenthpercentage());
-selectall();
-    Thread.sleep(2000);
-    sendkeys(getTenthpercentage(),percentage);
-    Thread.sleep(2000);
- sendkeys(getTenthState(),state);
-    Thread.sleep(2000);
-enterKey();
-sendkeys(getTenthCity(),city);
-    Thread.sleep(2000);
-enterKey();
-click(getTenthMarksheetUpload());
-    Thread.sleep(2000);
+        sendkeys(getTenthschoolname(), schlname);
+        Thread.sleep(2000);
+        sendkeys(getTenthboard(), Board);
+        Thread.sleep(2000);
+        sendkeys(getTenthmonth(), month);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getTenthYear(), year);
+        Thread.sleep(2000);
+        enterKey();
+        click(getTenthpercentage());
+        selectall();
+        Thread.sleep(2000);
+        sendkeys(getTenthpercentage(), percentage);
+        Thread.sleep(2000);
+        sendkeys(getTenthState(), state);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getTenthCity(), city);
+        Thread.sleep(2000);
+        enterKey();
+        click(getTenthMarksheetUpload());
+        Thread.sleep(2000);
         StringSelection ss = new StringSelection(tenthMarksheetimg);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
         Robot r = new Robot();
         r.delay(1000);
         r.keyPress(KeyEvent.VK_CONTROL);
@@ -193,76 +201,86 @@ click(getTenthMarksheetUpload());
         r.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(3000);
         enterKey();
-}
+    }
 
 
-public void twelfth(String twelfthSchool, String twelfthBoard,String twelfthmonth,String twelfthyear, String twelfthpercentage,String twelfthSkills, String twelfthstate, String twelfthcity) throws InterruptedException, AWTException {
-    Thread.sleep(3000);
-    click(getTwelfthSchlName());
-        sendkeys(getTwelfthSchlName(),twelfthSchool);
-    Thread.sleep(2000);
-    sendkeys(getTwelfthboard(),twelfthBoard);
-    Thread.sleep(2000);
-    sendkeys(getTwelfthMonth(),twelfthmonth);
-    Thread.sleep(2000);
-    enterKey();
-    sendkeys(getTwelfthYear(),twelfthyear);
-    Thread.sleep(2000);
-    enterKey();
-    click(getTwefthPercentage());
-    selectall();
-    Thread.sleep(2000);
-    sendkeys(getTwefthPercentage(),twelfthpercentage);
-    Thread.sleep(2000);
-    sendkeys(getTwelfthSkills(),twelfthSkills);
-    Thread.sleep(2000);
-    sendkeys(getTwelfthState(),twelfthstate);
-    Thread.sleep(2000);
-    enterKey();
-    sendkeys(getTwefthCity(),twelfthcity);
-    Thread.sleep(5000);
-    enterKey();
-    click(getTwelfthUpload());
-    Thread.sleep(2000);
-    StringSelection ss = new StringSelection(twelfthMarksheetimg);
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
-    Robot r = new Robot();
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_CONTROL);
-    r.keyPress(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyRelease(KeyEvent.VK_CONTROL);
-    r.keyRelease(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_ENTER);
-    r.keyRelease(KeyEvent.VK_ENTER);
-    Thread.sleep(3000);
-    enterKey();
+    public void twelfth(String twelfthSchool, String twelfthBoard, String twelfthmonth, String twelfthyear, String twelfthpercentage, String twelfthSkills, String twelfthstate, String twelfthcity) throws InterruptedException, AWTException {
+        Thread.sleep(3000);
+        click(getTwelfthSchlName());
+        sendkeys(getTwelfthSchlName(), twelfthSchool);
+        Thread.sleep(2000);
+        sendkeys(getTwelfthboard(), twelfthBoard);
+        Thread.sleep(2000);
+        sendkeys(getTwelfthMonth(), twelfthmonth);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getTwelfthYear(), twelfthyear);
+        Thread.sleep(2000);
+        enterKey();
+        click(getTwefthPercentage());
+        selectall();
+        Thread.sleep(2000);
+        sendkeys(getTwefthPercentage(), twelfthpercentage);
+        Thread.sleep(2000);
+        sendkeys(getTwelfthSkills(), twelfthSkills);
+        Thread.sleep(2000);
+        enterKey();
+        Thread.sleep(1000);
+        sendkeys(getTwelfthState(), twelfthstate);
+        Thread.sleep(2000);
+        enterKey();
+        sendkeys(getTwefthCity(), twelfthcity);
+        Thread.sleep(3000);
+        enterKey();
+        click(getTwelfthUpload());
+        Thread.sleep(2000);
+        StringSelection ss = new StringSelection(twelfthMarksheetimg);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+        Robot r = new Robot();
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+        enterKey();
 
 
-}
- public void ug(String ugpercentage) throws AWTException, InterruptedException {
+    }
+
+    public void ug(String ugpercentage, String ugskill1, String ugskill2, String ugskill3) throws AWTException, InterruptedException {
+
+        scrolldown(getUgSkills());
+        Thread.sleep(1000);
+        sendkeys(getUgSkills(), ugskill1);
+        Thread.sleep(1000);
+        enterKey();
+        sendkeys(getUgSkills(), ugskill2);
+        Thread.sleep(1000);
+        enterKey();
+        sendkeys(getUgSkills(), ugskill3);
+        Thread.sleep(1000);
+        enterKey();
+
         scrolldown(getUgPercentage());
         click(getUgPercentage());
         selectall();
+
         Thread.sleep(2000);
-        sendkeys(getUgPercentage(),ugpercentage);
+        sendkeys(getUgPercentage(), ugpercentage);
         Thread.sleep(2000);
         click(getSaveAndSubmitButton());
 
- }
+    }
 
-public void clickandcontinue() throws InterruptedException {
+    public void clickandcontinue() throws InterruptedException {
         Thread.sleep(3000);
         click(getSaveAndSubmitButton());
-}
-
-
-
-
-
-
-
+    }
 
 
 }

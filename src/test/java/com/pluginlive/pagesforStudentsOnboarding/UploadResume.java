@@ -13,14 +13,15 @@ import java.io.IOException;
 
 public class UploadResume extends BaseClass {
     public UploadResume() throws IOException {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
-    String resumefile = readExcelData1("UploadResume",1,0);
 
-    @FindBy (xpath = "//div[text()='Upload File']")
+    String resumefile = readExcelData1("UploadResume", 1, 0);
+
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement uploadResume;
 
-    @FindBy (xpath = "//div[text()='Save and Continue']")
+    @FindBy(xpath = "//div[text()='Save and Continue']")
     private WebElement saveAndcontinue;
 
     public WebElement getUploadResume() {
@@ -35,7 +36,7 @@ public class UploadResume extends BaseClass {
         click((getUploadResume()));
         Thread.sleep(2000);
         StringSelection ss1 = new StringSelection(resumefile);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss1,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss1, null);
         Robot r1 = new Robot();
         r1.delay(1000);
         r1.keyPress(KeyEvent.VK_CONTROL);
@@ -52,11 +53,6 @@ public class UploadResume extends BaseClass {
         Thread.sleep(2000);
         click(getSaveAndcontinue());
     }
-
-
-
-
-
 
 
 }

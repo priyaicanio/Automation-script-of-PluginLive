@@ -13,79 +13,60 @@ import java.io.IOException;
 
 public class TestExecutionforStudentRolesAccepting extends BaseClass {
 
-
     PageObjectManagerStudentRolesAccepting pom = new PageObjectManagerStudentRolesAccepting();
+
     public TestExecutionforStudentRolesAccepting() throws IOException {
         super();
     }
 
     @BeforeClass
-    public void beforeExecution() throws FileNotFoundException, IOException {
-        System.out.println("Execution Starts");
+    public void setUp() throws IOException {
+        // Common setup code here
         getdriver(getPropertyFileValue("browser"));
-        enterurl(getPropertyFileValue("url"));
         maximizewindow();
         implicitywait();
     }
 
-    @BeforeMethod
-    public void beforemethod() {
-        long starttime = System.currentTimeMillis();
-        System.out.println(starttime);
+    @AfterClass
+    public void tearDown() {
+        // Common teardown code here
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
- @Test (dataProvider = "studentCredentials")
+    @Test(dataProvider = "studentCredentials")
     public void testRolesAcceptingFlow(String userName, String password) throws IOException, InterruptedException, AWTException {
-     System.out.println("Login process begins");
-     pom.getLoginPage().Login(userName,password);
- }
+        // Your test code here
+        System.out.println("Login process begins");
+        enterurl(getPropertyFileValue("url"));
+        pom.getLoginPage().Login(userName, password);
+        pom.getHomePage().rolesbutton();
+        pom.getRolesPage().RoleSearch(readExcelData1("Feedback", 1, 0));
+        pom.getRolesPage().RoleList();
+        pom.getQuesionnairePage().questionnaire();
+        pom.getFeedbackPage().feedback(readExcelData1("Feedback", 1, 1));
+        pom.getFeedbackPage().feedbackform(readExcelData1("Feedback", 1, 2));
+        String actualText = "You Applied Successfully !";
+        WebElement expected = pom.getFeedbackPage().getAppliedsuccessfullmsg();
+        String expectedText = expected.getText();
+        Assert.assertEquals(actualText, expectedText);
+        System.out.println(expectedText);
+        pom.getFeedbackPage().getDoneButton().click();
+    }
 
     @DataProvider(name = "studentCredentials")
-    public Object[][] data(){
-        return new Object[][]{
-
-                {"priya.t+studentrolecreation14@icanio.com","Priya@2606"},
-                  };
+    public Object[][] data() {
+        Object[][] obj = new Object[][]{
+                {"priya.t+studentrolecreation16@icanio.com", "Priya@2606"},
+                {"priya.t+studentrolecreation14@icanio.com", "Priya@2606"},
+                {"priya.t+studentrolecreation17@icanio.com", "Priya@2606"}
+        };
+        return obj;
     }
-
-    @Test(priority = 1)
-public void roles() throws IOException, InterruptedException {
-        pom.getHomePage().rolesbutton();
-}
-
-@Test(priority = 2)
-    public void roleapply() throws IOException, InterruptedException {
-        pom.getRolesPage().RoleSearch(readExcelData1("Feedback",1,0));
-        pom.getRolesPage().RoleList();
-}
-
-@Test(priority = 3)
-    public void addquestionnaire() throws IOException, InterruptedException {
-        pom.getQuesionnairePage().questionnaire();
-}
-
-@Test (priority = 4)
-    public void feedbackforapplyingjob() throws IOException, InterruptedException, AWTException {
-        pom.getFeedbackPage().feedback(readExcelData1("Feedback",1,1));
-        pom.getFeedbackPage().feedbackform(readExcelData1("Feedback",1,2));
-
-}
-
-@Test(priority = 5)
-public void appliedMsg() throws IOException {
-    String actualText = "You Applied Successfully !";
-    WebElement excepted =   pom.getFeedbackPage().getAppliedsuccessfullmsg();
-    String exceptedText = excepted.getText();
-    Assert.assertEquals(actualText, exceptedText);
-}
-
-@Test (priority = 6)
-    public void done() throws IOException {
-        pom.getFeedbackPage().getDoneButton();
 }
 
 
-}
 
 
 

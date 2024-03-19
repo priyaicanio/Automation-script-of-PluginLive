@@ -45,13 +45,14 @@ public class EmailVerfication extends BaseClass {
         return hideexpandedCOntent;
     }
 
-    @FindBy (xpath = "//div[@id=\":ty\"]")
-private WebElement hideexpandedCOntent;
+    @FindBy(xpath = "//div[@id=\":ty\"]")
+    private WebElement hideexpandedCOntent;
 
     public List<WebElement> getEmaillist() {
         return emaillist;
     }
-    @FindBy (xpath = "//a[text()='Activate Account']")
+
+    @FindBy(xpath = "//a[text()='Activate Account']")
     private WebElement activateAccountbutton;
 
     public WebElement getActivateAccountbutton() {

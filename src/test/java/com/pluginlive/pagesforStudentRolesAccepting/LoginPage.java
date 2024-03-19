@@ -11,7 +11,7 @@ import java.io.IOException;
 public class LoginPage extends BaseClass {
     public LoginPage() throws IOException {
 
-        PageFactory.initElements(driver , this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//input[@type='email']")
@@ -46,13 +46,13 @@ public class LoginPage extends BaseClass {
         return txtUserName;
     }
 
-    @FindBy (xpath = "//*[@class='forgot-button']")
+    @FindBy(xpath = "//*[@class='forgot-button']")
     private WebElement btnForgot;
 
-    @FindBy (xpath = "(//div[@class=\"error\"])[1]")
+    @FindBy(xpath = "(//div[@class=\"error\"])[1]")
     private WebElement errormsgInvalidusername;
 
-    @FindBy (xpath = "(//div[@class=\"error\"])[2]")
+    @FindBy(xpath = "(//div[@class=\"error\"])[2]")
     private WebElement errormsgInvalidpassword;
 
     public WebElement getErrormsgInvalidusername() {
@@ -64,14 +64,12 @@ public class LoginPage extends BaseClass {
     }
 
 
-
-
-    public void  Login(String userName, String password) throws AWTException, InterruptedException, IOException {
+    public void Login(String userName, String password) throws AWTException, InterruptedException, IOException {
         implicitywait();
         refresh();
         Thread.sleep(2000);
-        sendkeys(getTxtUserName(),userName);
-        sendkeys(getTxtPassword(),password);
+        sendkeys(getTxtUserName(), userName);
+        sendkeys(getTxtPassword(), password);
         click(getCheckboxTermsandCondition());
         click(getBtnLogin());
     }

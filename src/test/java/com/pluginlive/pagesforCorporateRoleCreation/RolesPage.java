@@ -11,7 +11,7 @@ public class RolesPage extends BaseClass {
 
     public RolesPage() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//button[@class ='ant-btn ant-btn-primary sc-ftTHYK fCoamy']")
@@ -23,7 +23,6 @@ public class RolesPage extends BaseClass {
     public void clicknewRole(){
         click(getNewRole());
     }
-
 
 
 

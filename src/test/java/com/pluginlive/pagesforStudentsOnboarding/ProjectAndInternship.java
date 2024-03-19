@@ -15,63 +15,63 @@ public class ProjectAndInternship extends BaseClass {
 
     public ProjectAndInternship() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getSaveAndContinueButton() {
         return saveAndContinueButton;
     }
 
-    String certificateimg = readExcelData1("ProjectandInternship",1,15);
-    String internshipcertificate = readExcelData1("ProjectandInternship",1,30);
+    String certificateimg = readExcelData1("ProjectandInternship", 1, 15);
+    String internshipcertificate = readExcelData1("ProjectandInternship", 1, 30);
 
-    @FindBy (xpath = "//div[text()='Save & Continue']")
+    @FindBy(xpath = "//div[text()='Save & Continue']")
     private WebElement saveAndContinueButton;
 
     // Add project
-    @FindBy (xpath = "//div[text()='Add Project']")
+    @FindBy(xpath = "//div[text()='Add Project']")
     private WebElement addProject;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_32\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_64\"]")
     private WebElement companyName;
 
-    @FindBy (xpath = "//input[@id=\"project_0_title\"]")
+    @FindBy(xpath = "//input[@id=\"project_0_title\"]")
     private WebElement projectTitle;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_33\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_65\"]")
     private WebElement startMonth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_34\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_66\"]")
     private WebElement startYear;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_35\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_67\"]")
     private WebElement endMOnth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_36\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_68\"]")
     private WebElement endYear;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_37\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_69\"]")
     private WebElement function;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_38\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_70\"]")
     private WebElement role;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_39\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_71\"]")
     private WebElement industry;
 
-    @FindBy (xpath = "//div[@aria-label=\"Enter Your Description here...\"]")
-private  WebElement description;
+    @FindBy(xpath = "//div[@aria-label=\"Enter Your Description here...\"]")
+    private WebElement description;
 
-    @FindBy (xpath = "//div[@class=\"ant-select-selection-overflow\"]")
+    @FindBy(xpath = "//div[@class=\"ant-select-selection-overflow\"]")
     private WebElement skillsGained;
-    @FindBy (xpath = "//input[@id=\"rc_select_40\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_72\"]")
     private WebElement skillsGainedValue;
 
     public WebElement getSkillsGainedValue() {
         return skillsGainedValue;
     }
 
-    @FindBy (xpath = "//div[text()='Upload File']")
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement upload;
 
     public WebElement getAddProject() {
@@ -125,57 +125,61 @@ private  WebElement description;
     public WebElement getUpload() {
         return upload;
     }
-// Add Internship
-    @FindBy (xpath = "//div[text()='Add internship']")
+
+    // Add Internship
+    @FindBy(xpath = "//div[text()='Add internship']")
     private WebElement addinternship;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_41\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_91\"]")
     private WebElement interncompanyName;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_42\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_92\"]")
     private WebElement internstartMonth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_43\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_93\"]")
     private WebElement internStartYear;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_44\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_94\"]")
     private WebElement internEndMonth;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_45\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_95\"]")
     private WebElement internEndYear;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_46\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_96\"]")
     private WebElement internFunction;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_47\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_97\"]")
     private WebElement internRole;
 
-    @FindBy (xpath = "//input[@id=\"rc_select_48\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_98\"]")
     private WebElement internIndustry;
 
-    @FindBy (xpath = "(//div[@aria-label=\"Enter Your Description here...\"])[2]")
+    @FindBy(xpath = "(//div[@aria-label=\"Enter Your Description here...\"])[2]")
     private WebElement internDescription;
-    @FindBy (xpath = "//div[@class=\"ant-select-selection-overflow\"]")
+    @FindBy(xpath = "//div[@class=\"ant-select-selection-overflow\"]")
     private WebElement outsideclick;
 
-    public WebElement getOutsideclick() {return outsideclick;}
-    @FindBy (xpath = "//span[text() ='Eg.React.js']")
+    public WebElement getOutsideclick() {
+        return outsideclick;
+    }
+
+    @FindBy(xpath = "//span[text() ='Eg.React.js']")
     private WebElement internSkills;
 
-    @FindBy (xpath = "//div[text()='Upload File']")
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement internUpload;
-   @FindBy (xpath = "//input[@id='rc_select_49']")
-private WebElement internshipSkillvalue;
+    @FindBy(xpath = "//input[@id='rc_select_99']")
+    private WebElement internshipSkillvalue;
 
 
-    @FindBy (xpath = "//div[text()='Update']")
-private WebElement internshipUpdatebutton;
+    @FindBy(xpath = "//div[text()='Update']")
+    private WebElement internshipUpdatebutton;
 
     public WebElement getInternOutside() {
         return internOutside;
     }
 
-    @FindBy (xpath = "//div[@class=\"sc-aXZVg sc-fDpJdc kcDXFM eeIjhl\"]")
+    @FindBy(xpath = "//div[@class=\"sc-aXZVg sc-fDpJdc kcDXFM eeIjhl\"]")
     private WebElement internOutside;
 
     public WebElement getAddinternship() {
@@ -234,64 +238,64 @@ private WebElement internshipUpdatebutton;
         return internshipUpdatebutton;
     }
 
-    public void addproject(String company, String projectTitle, String startMonth, String startYear, String endMOnth, String endYear, String function, String role, String industry, String description, String skill1, String skill2, String skill3, String skill4, String skill5, String projectcertificate ) throws InterruptedException, AWTException {
+    public void addproject(String company, String projectTitle, String startMonth, String startYear, String endMOnth, String endYear, String function, String role, String industry, String description, String skill1, String skill2, String skill3, String skill4, String skill5, String projectcertificate) throws InterruptedException, AWTException {
         Thread.sleep(2000);
         click(getAddProject());
+        Thread.sleep(2000);
+        sendkeys(getCompanyName(), company);
         Thread.sleep(3000);
-sendkeys(getCompanyName(),company);
+        enterKey();
         Thread.sleep(2000);
-enterKey();
-        Thread.sleep(2000);
- sendkeys(getProjectTitle(),projectTitle);
+        sendkeys(getProjectTitle(), projectTitle);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getStartMonth(),startMonth);
- Thread.sleep(2000);
- enterKey();
- Thread.sleep(2000);
- sendkeys(getStartYear(),startYear);
+        sendkeys(getStartMonth(), startMonth);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-  sendkeys(getEndMOnth(),endMOnth);
+        sendkeys(getStartYear(), startYear);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-    sendkeys(getEndYear(),endYear);
+        sendkeys(getEndMOnth(), endMOnth);
+        Thread.sleep(2000);
+        enterKey();
+        Thread.sleep(2000);
+        sendkeys(getEndYear(), endYear);
         Thread.sleep(2000);
         enterKey();
 
         Thread.sleep(2000);
-        sendkeys(getFunction(),function);
+        sendkeys(getFunction(), function);
         Thread.sleep(2000);
-enterKey();
+        enterKey();
         Thread.sleep(2000);
-        sendkeys( getRole(),role);
+        sendkeys(getRole(), role);
         Thread.sleep(2000);
-enterKey();
+        enterKey();
         Thread.sleep(2000);
         sendkeys(getIndustry(), industry);
         Thread.sleep(2000);
-enterKey();
+        enterKey();
         Thread.sleep(2000);
         sendkeys(getDescription(), description);
-Thread.sleep(5000);
-scrolldown(getSkillsGained());
-click(getSkillsGained());
-sendkeys(getSkillsGainedValue(),skill1);
-Thread.sleep(1000);
-enterKey();
-sendkeys(getSkillsGainedValue(),skill2);
-Thread.sleep(1000);
+        Thread.sleep(5000);
+        scrolldown(getSkillsGained());
+        click(getSkillsGained());
+        sendkeys(getSkillsGainedValue(), skill1);
+        Thread.sleep(1000);
         enterKey();
-        sendkeys(getSkillsGainedValue(),skill3);
+        sendkeys(getSkillsGainedValue(), skill2);
+        Thread.sleep(1000);
+        enterKey();
+        sendkeys(getSkillsGainedValue(), skill3);
         Thread.sleep(2000);
         enterKey();
-        sendkeys(getSkillsGainedValue(),skill4);
+        sendkeys(getSkillsGainedValue(), skill4);
         Thread.sleep(2000);
         enterKey();
-        sendkeys(getSkillsGainedValue(),skill5);
+        sendkeys(getSkillsGainedValue(), skill5);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(1000);
@@ -301,7 +305,7 @@ Thread.sleep(1000);
         click(getUpload());
         Thread.sleep(2000);
         StringSelection ss = new StringSelection(certificateimg);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
         Robot r = new Robot();
         r.delay(1000);
         r.keyPress(KeyEvent.VK_CONTROL);
@@ -317,36 +321,36 @@ Thread.sleep(1000);
     }
 
 
-public void addInternship(String interncompany,String internstartMonth,String internstartYear,String internendMOnth, String internendYear,String internfunction, String internrole, String internindustry, String interndescription, String internskill1, String internskill2, String internskill3, String internskill4, String internskill5, String interncertificate ) throws InterruptedException, AWTException {
+    public void addInternship(String interncompany, String internstartMonth, String internstartYear, String internendMOnth, String internendYear, String internfunction, String internrole, String internindustry, String interndescription, String internskill1, String internskill2, String internskill3, String internskill4, String internskill5, String interncertificate) throws InterruptedException, AWTException {
         scrolldown(getAddinternship());
-    Thread.sleep(2000);
-    click(getAddinternship());
+        Thread.sleep(2000);
+        click(getAddinternship());
         Thread.sleep(3000);
-        sendkeys(getInterncompanyName(),interncompany);
+        sendkeys(getInterncompanyName(), interncompany);
         Thread.sleep(3000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getInternstartMonth(),internstartMonth);
+        sendkeys(getInternstartMonth(), internstartMonth);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getInternStartYear(),internstartYear);
+        sendkeys(getInternStartYear(), internstartYear);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getInternEndMonth(),internendMOnth);
+        sendkeys(getInternEndMonth(), internendMOnth);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getInternEndYear(),internendYear);
+        sendkeys(getInternEndYear(), internendYear);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys(getInternFunction(),internfunction);
+        sendkeys(getInternFunction(), internfunction);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
-        sendkeys( getInternRole(),internrole);
+        sendkeys(getInternRole(), internrole);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(2000);
@@ -358,29 +362,29 @@ public void addInternship(String interncompany,String internstartMonth,String in
         Thread.sleep(5000);
         scrolldown(getInternSkills());
         click(getInternshipSkillvalue());
-        sendkeys(getInternshipSkillvalue(),internskill1);
+        sendkeys(getInternshipSkillvalue(), internskill1);
         Thread.sleep(1000);
         enterKey();
-        sendkeys(getInternshipSkillvalue(),internskill2);
+        sendkeys(getInternshipSkillvalue(), internskill2);
         Thread.sleep(1000);
         enterKey();
-        sendkeys(getInternshipSkillvalue(),internskill3);
+        sendkeys(getInternshipSkillvalue(), internskill3);
         Thread.sleep(2000);
         enterKey();
-        sendkeys(getInternshipSkillvalue(),internskill4);
+        sendkeys(getInternshipSkillvalue(), internskill4);
         Thread.sleep(2000);
         enterKey();
-        sendkeys(getInternshipSkillvalue(),internskill5);
+        sendkeys(getInternshipSkillvalue(), internskill5);
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(1000);
-        click(getInternOutside());
-        Thread.sleep(2000);
+        scrolldown(getInternUpload());
+        Thread.sleep(1000);
 
         click(getInternUpload());
         Thread.sleep(2000);
         StringSelection ss = new StringSelection(internshipcertificate);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
         Robot r = new Robot();
         r.delay(1000);
         r.keyPress(KeyEvent.VK_CONTROL);
@@ -400,8 +404,6 @@ public void addInternship(String interncompany,String internstartMonth,String in
         Thread.sleep(2000);
         click(getSaveAndContinueButton());
     }
-
-
 
 
 }

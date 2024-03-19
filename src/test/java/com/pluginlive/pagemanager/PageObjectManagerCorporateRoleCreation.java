@@ -17,8 +17,9 @@ public class PageObjectManagerCorporateRoleCreation {
 private DashboardPage dashboardPage;
 
     public RolesPage getRolesPage() throws IOException {
-        return (rolesPage == null)? rolesPage = new RolesPage(): rolesPage;
+        return (rolesPage == null) ? rolesPage = new RolesPage() : rolesPage;
     }
+
     private RolesPage rolesPage;
 
     public NewRoleJobDetailsPage getNewRoleJobDetailsPage() throws IOException{

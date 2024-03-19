@@ -10,17 +10,17 @@ import java.io.IOException;
 public class SetPassword extends BaseClass {
     public SetPassword() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
 
-    @FindBy (xpath = "(//input[@type=\"password\"])[1]")
+    @FindBy(xpath = "(//input[@type=\"password\"])[1]")
     private WebElement newPassword;
 
-    @FindBy (xpath = "(//input[@type=\"password\"])[2]")
+    @FindBy(xpath = "(//input[@type=\"password\"])[2]")
     private WebElement confirmPassword;
 
-    @FindBy (xpath = "//div[text()='Submit']")
+    @FindBy(xpath = "//div[text()='Submit']")
     private WebElement submitButton;
 
     public WebElement getNewPassword() {
@@ -35,11 +35,11 @@ public class SetPassword extends BaseClass {
         return submitButton;
     }
 
-    public void setNewPassword(String newPassword , String confirmPassword) throws InterruptedException, IOException {
-      switchchildwindow();
+    public void setNewPassword(String newPassword, String confirmPassword) throws InterruptedException, IOException {
+        switchchildwindow();
         implicitywait();
         Thread.sleep(5000);
-       sendkeys(getNewPassword(),newPassword);
+        sendkeys(getNewPassword(), newPassword);
         Thread.sleep(1000);
         click(getConfirmPassword());
         sendkeys(getConfirmPassword(), confirmPassword);

@@ -10,13 +10,13 @@ import java.io.IOException;
 
 public class FeedbackPage extends BaseClass {
     public FeedbackPage() throws IOException {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//input[@id=\"rc_select_0\"]")
+    @FindBy(xpath = "//input[@id=\"rc_select_0\"]")
     private WebElement informationAboutThisJobRole;
 
-    @FindBy (xpath = "//div[text()='Next']")
+    @FindBy(xpath = "//div[text()='Next']")
     private WebElement nextButton;
 
     public WebElement getInformationAboutThisJobRole() {
@@ -27,23 +27,31 @@ public class FeedbackPage extends BaseClass {
         return nextButton;
     }
 
-@FindBy (xpath = "//div[@aria-posinset=\"4\"]")
-private WebElement starRating;
+    @FindBy(xpath = "//div[@aria-posinset=\"4\"]")
+    private WebElement starRating;
 
-    @FindBy (xpath = "//div[text()='Great Platform']")
+    @FindBy(xpath = "//div[text()='Great Platform']")
     private WebElement Aboutus;
 
-    @FindBy (xpath = "//textarea[@placeholder=\"Want to share anything else ? Type here..\"]")
+    @FindBy(xpath = "//textarea[@placeholder=\"Want to share anything else ? Type here..\"]")
     private WebElement writtenFeedback;
 
-    @FindBy (xpath = "//div[text()='Send Your Feedback']")
+    @FindBy(xpath = "//div[text()='Send Your Feedback']")
     private WebElement sendFeedbackButton;
 
-    @FindBy (xpath = "//div[@class=\"sc-aXZVg sc-iHbSHJ lmnCGv brMIpi\"]")
+    @FindBy(xpath = "//div[@class=\"sc-aXZVg sc-iHbSHJ lmnCGv brMIpi\"]")
     private WebElement Appliedsuccessfullmsg;
 
-    @FindBy (xpath = "//div[text()='Done']")
+    @FindBy(xpath = "//button[@class=\"ant-btn ant-btn-primary sc-dtInlm bRDbTv\"]")
     private WebElement doneButton;
+
+    public WebElement getJobresultlink() {
+        return jobresultlink;
+    }
+
+    @FindBy(linkText = "result")
+    private WebElement jobresultlink;
+
 
     public WebElement getDoneButton() {
         return doneButton;
@@ -71,7 +79,7 @@ private WebElement starRating;
 
     public void feedback(String reference) throws InterruptedException, AWTException {
         implicitywait();
-        sendkeys(getInformationAboutThisJobRole(),reference);
+        sendkeys(getInformationAboutThisJobRole(), reference);
         Thread.sleep(1000);
         enterKey();
         click(getNextButton());
@@ -79,29 +87,25 @@ private WebElement starRating;
 
     }
 
- public void feedbackform(String feedback) throws InterruptedException {
-     implicitywait();
-     click(getStarRating());
-     Thread.sleep(1000);
-     click(getAboutus());
-     Thread.sleep(1000);
-     sendkeys(getWrittenFeedback(), feedback);
-     Thread.sleep(1000);
-     click(getSendFeedbackButton());
- }
+    public void feedbackform(String feedback) throws InterruptedException {
+        implicitywait();
+        click(getStarRating());
+        Thread.sleep(1000);
+        click(getAboutus());
+        Thread.sleep(1000);
+        sendkeys(getWrittenFeedback(), feedback);
+        Thread.sleep(1000);
+        click(getSendFeedbackButton());
+    }
 
-     public String appliedSuccessMsg () {
-         String text = getText(getAppliedsuccessfullmsg());
-         return text;
-     }
+    public String appliedSuccessMsg() {
+        String text = getText(getAppliedsuccessfullmsg());
+        return text;
+    }
 
-public void applydone() throws InterruptedException {
+    public void donebutton() throws InterruptedException {
         Thread.sleep(2000);
-        switchchildwindow();
-    Thread.sleep(2000);
-
-    click(getDoneButton());
-}
-
+        click(getDoneButton());
+    }
 
 }

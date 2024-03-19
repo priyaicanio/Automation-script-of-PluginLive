@@ -9,14 +9,14 @@ import java.io.IOException;
 
 public class LoginPage extends BaseClass {
 
-    public LoginPage() throws IOException{
+    public LoginPage() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
 
-@FindBy (xpath = "//a[contains(text(), 'Register')]")
-private WebElement registerButton;
+    @FindBy(xpath = "//a[contains(text(), 'Register')]")
+    private WebElement registerButton;
 
 
     public WebElement getRegisterButton() {
@@ -24,12 +24,12 @@ private WebElement registerButton;
     }
 
 
-public void register() throws InterruptedException {
+    public void register() throws InterruptedException {
         scrolldown(getRegisterButton());
         Thread.sleep(3000);
         visibilityOf(getRegisterButton());
-       click(getRegisterButton());
-}
+        click(getRegisterButton());
+    }
 
 }
 

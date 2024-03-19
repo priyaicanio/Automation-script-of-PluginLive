@@ -137,8 +137,8 @@ public class StudentRegistration extends BaseClass {
         return submitButton;
     }
 
-   // @FindBy(xpath = "//div[@class=\"sc-fmRtwQ kIYJuE\"]//following-sibling::div")
-    @FindBy (xpath = "//div[contains(text(), 'Thank you')]")
+    // @FindBy(xpath = "//div[@class=\"sc-fmRtwQ kIYJuE\"]//following-sibling::div")
+    @FindBy(xpath = "//div[contains(text(), 'Thank you')]")
     private WebElement registrationSuccessMsg;
 
     public WebElement getRegistrationSuccessMsg() {
@@ -156,7 +156,7 @@ public class StudentRegistration extends BaseClass {
         click(getStudentRadioButton());
         Thread.sleep(2000);
 
-        sendkeys(getSelectState(), state);
+      sendkeys(getSelectState(), state);
         Thread.sleep(1000);
         enterKey();
         sendkeys(getSelectCity(), city);
@@ -166,7 +166,7 @@ public class StudentRegistration extends BaseClass {
         Thread.sleep(2000);
         enterKey();
         sendkeys(getSelectDegree(), degree);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         enterKey();
         sendkeys(getSelectDepartment(), department);
         Thread.sleep(2000);
@@ -191,24 +191,9 @@ public class StudentRegistration extends BaseClass {
     public String registrationsuccessmsg() throws InterruptedException {
         Thread.sleep(3000);
         visibilityOf(getRegistrationSuccessMsg());
-      return  getText(getRegistrationSuccessMsg());
+        return getText(getRegistrationSuccessMsg());
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

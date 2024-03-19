@@ -5,77 +5,92 @@ import com.pluginlive.pagesforStudentsOnboarding.*;
 
 import java.io.IOException;
 
-public class PageObjectManagerStudentsOnboarding  {
+public class PageObjectManagerStudentsOnboarding {
 
-    public LoginPage getLoginPage() throws IOException{
-        return (loginPage==null)? loginPage = new LoginPage() : loginPage;
+    public LoginPage getLoginPage() throws IOException {
+        return (loginPage == null) ? loginPage = new LoginPage() : loginPage;
     }
+
     private LoginPage loginPage;
 
-public StudentRegistration getStudentRegistration() throws IOException {
-    return (studentRegistration == null)? studentRegistration = new StudentRegistration() : studentRegistration;
+    public StudentRegistration getStudentRegistration() throws IOException {
+        return (studentRegistration == null) ? studentRegistration = new StudentRegistration() : studentRegistration;
 
-}
-private StudentRegistration studentRegistration;
+    }
 
-public EmailVerfication getEmailVerification() throws IOException{
-    return (emailVerification == null)? emailVerification = new EmailVerfication() : emailVerification;
+    private StudentRegistration studentRegistration;
 
-}
-private  EmailVerfication emailVerification;
+    public EmailVerfication getEmailVerification() throws IOException {
+        return (emailVerification == null) ? emailVerification = new EmailVerfication() : emailVerification;
 
+    }
 
-public SetPassword getSetPassword() throws IOException{
-    return (setPassword == null)? setPassword = new SetPassword() : setPassword;
-}
-private SetPassword setPassword;
+    private EmailVerfication emailVerification;
 
 
-public PersonalDetails getPersonalDetails() throws IOException {
-    return (personalDetails == null)? personalDetails = new PersonalDetails() : personalDetails;
+    public SetPassword getSetPassword() throws IOException {
+        return (setPassword == null) ? setPassword = new SetPassword() : setPassword;
+    }
 
-}
-private PersonalDetails personalDetails;
-
-public EducationalDetails getEducationalDetails() throws IOException {
-    return (educationalDetails == null)? educationalDetails = new EducationalDetails()  : educationalDetails;
-}
-
-private EducationalDetails educationalDetails;
-
-public  ProjectAndInternship getProjectAndInternship() throws IOException {
-    return (projectAndInternship == null)? projectAndInternship = new ProjectAndInternship() : projectAndInternship;
-}
-
-private ProjectAndInternship projectAndInternship;
+    private SetPassword setPassword;
 
 
-public WorkExperience getWorkExperience() throws IOException {
-    return (workExperience == null )? workExperience = new WorkExperience() : workExperience;
-}
-private  WorkExperience workExperience;
+    public PersonalDetails getPersonalDetails() throws IOException {
+        return (personalDetails == null) ? personalDetails = new PersonalDetails() : personalDetails;
+
+    }
+
+    private PersonalDetails personalDetails;
+
+    public EducationalDetails getEducationalDetails() throws IOException {
+        return (educationalDetails == null) ? educationalDetails = new EducationalDetails() : educationalDetails;
+    }
+
+    private EducationalDetails educationalDetails;
+
+    public ProjectAndInternship getProjectAndInternship() throws IOException {
+        return (projectAndInternship == null) ? projectAndInternship = new ProjectAndInternship() : projectAndInternship;
+    }
+
+    private ProjectAndInternship projectAndInternship;
 
 
-public CoursesAndTraining getCoursesAndTraining() throws IOException {
-    return (coursesAndTraining==null)? coursesAndTraining = new CoursesAndTraining() : coursesAndTraining;
-}
-private CoursesAndTraining coursesAndTraining;
+    public WorkExperience getWorkExperience() throws IOException {
+        return (workExperience == null) ? workExperience = new WorkExperience() : workExperience;
+    }
 
-public ProofAndDocuments getProofAndDocuments() throws IOException {
-    return (proofAndDocuments==null)? proofAndDocuments = new ProofAndDocuments() : proofAndDocuments;
-}
-private ProofAndDocuments proofAndDocuments;
+    private WorkExperience workExperience;
 
-public AdditionalDetails getAdditionalDetails() throws IOException {
-    return (additionalDetails == null)? additionalDetails = new AdditionalDetails() : additionalDetails;
-}
-private AdditionalDetails additionalDetails;
 
-public UploadResume getUploadResume() throws IOException {
-    return (uploadResume == null)? uploadResume = new UploadResume() : uploadResume;
-}
+    public CoursesAndTraining getCoursesAndTraining() throws IOException {
+        return (coursesAndTraining == null) ? coursesAndTraining = new CoursesAndTraining() : coursesAndTraining;
+    }
 
-private UploadResume uploadResume;
+    private CoursesAndTraining coursesAndTraining;
+
+    public ProofAndDocuments getProofAndDocuments() throws IOException {
+        return (proofAndDocuments == null) ? proofAndDocuments = new ProofAndDocuments() : proofAndDocuments;
+    }
+
+    private ProofAndDocuments proofAndDocuments;
+
+    public AdditionalDetails getAdditionalDetails() throws IOException {
+        return (additionalDetails == null) ? additionalDetails = new AdditionalDetails() : additionalDetails;
+    }
+
+    private AdditionalDetails additionalDetails;
+
+    public UploadResume getUploadResume() throws IOException {
+        return (uploadResume == null) ? uploadResume = new UploadResume() : uploadResume;
+    }
+
+    private UploadResume uploadResume;
+
+    public UploadProfile getUploadProfile() throws IOException {
+        return (uploadProfile == null) ? uploadProfile = new UploadProfile() : uploadProfile;
+    }
+
+    private UploadProfile uploadProfile;
 
 
 }

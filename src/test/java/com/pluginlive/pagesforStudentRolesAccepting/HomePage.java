@@ -7,24 +7,23 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class HomePage  extends BaseClass {
+public class HomePage extends BaseClass {
     public HomePage() throws IOException {
 
-        PageFactory.initElements(driver , this);
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getRolesLink() {
         return rolesLink;
     }
 
-    @FindBy (linkText = "Roles")
+    @FindBy(linkText = "Roles")
     private WebElement rolesLink;
+
     public void rolesbutton() throws InterruptedException {
         Thread.sleep(2000);
-       click(getRolesLink());
+        click(getRolesLink());
     }
-
-
 
 
 }

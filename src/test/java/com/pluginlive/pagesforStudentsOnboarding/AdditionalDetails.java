@@ -11,19 +11,19 @@ import java.io.IOException;
 public class AdditionalDetails extends BaseClass {
     public AdditionalDetails() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//input[@id='rc_select_65']")
+    @FindBy(xpath = "//input[@id='rc_select_129']")
     private WebElement caste;
 
-    @FindBy (xpath = "//input[@id='rc_select_66']")
+    @FindBy(xpath = "//input[@id='rc_select_130']")
     private WebElement religion;
 
-    @FindBy (xpath = "//input[@id=\"hobbie_0\"]")
+    @FindBy(xpath = "//input[@id=\"hobbie_0\"]")
     private WebElement hobbies;
 
-    @FindBy (xpath = "//input[@id=\"language_0\"]")
+    @FindBy(xpath = "//input[@id=\"language_0\"]")
     private WebElement language;
 
     public WebElement getLanguage2() {
@@ -34,14 +34,14 @@ public class AdditionalDetails extends BaseClass {
     private WebElement language2;
 
 
-    @FindBy (xpath = "//div[text()='Add Languages']")
+    @FindBy(xpath = "//div[text()='Add Languages']")
     private WebElement addLanguage;
 
 
-    @FindBy (xpath = "//input[@type=\"checkbox\"]")
+    @FindBy(xpath = "//input[@type=\"checkbox\"]")
     private WebElement joblocationAnywhere;
 
-    @FindBy (xpath = "//div[@aria-label=\"Enter Your Description here...\"]")
+    @FindBy(xpath = "//div[@aria-label=\"Enter Your Description here...\"]")
     private WebElement careerObjective;
 
     public WebElement getCaste() {
@@ -72,7 +72,7 @@ public class AdditionalDetails extends BaseClass {
         return careerObjective;
     }
 
-    @FindBy (xpath = "//div[text()='Save & Continue']")
+    @FindBy(xpath = "//div[text()='Save & Continue']")
     private WebElement saveAndContinueButton;
 
     public WebElement getSaveAndContinueButton() {
@@ -83,58 +83,38 @@ public class AdditionalDetails extends BaseClass {
         return whatsappandmailnotification;
     }
 
-    @FindBy (xpath = "(//button[@type=\"button\"])[2]")
+    @FindBy(xpath = "(//button[@type=\"button\"])[2]")
     private WebElement whatsappandmailnotification;
 
 
     public void additionaldetails(String caste, String religion, String Hobbies, String lang1, String lang2, String careerobj) throws AWTException, InterruptedException {
-Thread.sleep(5000);
-visibilityOf(getCaste());
- sendkeys(getCaste(),caste);
- Thread.sleep(1000);
- enterKey();
- sendkeys(getReligion(),religion);
+        Thread.sleep(5000);
+        visibilityOf(getCaste());
+        sendkeys(getCaste(), caste);
         Thread.sleep(1000);
         enterKey();
- sendkeys(getHobbies(),Hobbies);
+        sendkeys(getReligion(), religion);
         Thread.sleep(1000);
-sendkeys(getLanguage(),lang1);
+        enterKey();
+        sendkeys(getHobbies(), Hobbies);
         Thread.sleep(1000);
-click(getAddLanguage());
+        sendkeys(getLanguage(), lang1);
         Thread.sleep(1000);
-sendkeys(getLanguage2(),lang2);
-click(getJoblocationAnywhere());
+        click(getAddLanguage());
+        Thread.sleep(1000);
+        sendkeys(getLanguage2(), lang2);
+        click(getJoblocationAnywhere());
         Thread.sleep(1000);
         click(getCareerObjective());
         Thread.sleep(1000);
-        sendkeys(getCareerObjective(),careerobj);
+        sendkeys(getCareerObjective(), careerobj);
         Thread.sleep(3000);
-click(getSaveAndContinueButton());
-Thread.sleep(3000);
-click(getWhatsappandmailnotification());
-
-
-
-
-
-
-
-
-
-
+        click(getSaveAndContinueButton());
+        Thread.sleep(3000);
+        click(getWhatsappandmailnotification());
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

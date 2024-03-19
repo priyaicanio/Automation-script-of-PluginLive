@@ -21,6 +21,7 @@ import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
     public static WebDriver driver;
@@ -67,6 +68,12 @@ public class BaseClass {
         element.sendKeys(formattedDate);
     }
 
+    //Javascript scroll down
+    public void javascriptscrolldown() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//a[text()='Register']")));
+
+    }
 
     //click
     public void click(WebElement element) {
@@ -99,6 +106,19 @@ public class BaseClass {
     public void visibilityOf(WebElement element) {
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
         driverWait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    //elementtobeclickable
+    public void elementtobeclickable(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Wait up to 10 seconds
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    //Presenceof
+    public void presenceof(WebElement element) {
+        Duration timeout = Duration.ofSeconds(60);
+
+        WebDriverWait driverWait = (WebDriverWait) new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated((By) element));
     }
 
     //Scroll into view
@@ -156,6 +176,19 @@ public class BaseClass {
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ENTER);
         r.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public void Tabswitcher() throws AWTException {
+    ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+        System.out.println("Title of the current page: " + driver.getTitle());
+
+    }
+    public void Tabforwardswitcher() throws AWTException {
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        System.out.println("Title of the current page: " + driver.getTitle());
+
     }
 
     //getTitle
@@ -240,10 +273,14 @@ public class BaseClass {
     }
 
     //Screenshot for a page
-    public void screenshot(String name) throws IOException {
+    public void screenshot(String Methodname) throws IOException {
         TakesScreenshot tk = (TakesScreenshot) driver;
         File file = tk.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("C:\\Users\\T-450\\Desktop\\PluginLive Automation testing Screenshot"));
+        try {
+            FileUtils.copyFile(file, new File("C:\\Users\\ICANIO-10090\\Desktop\\Project\\PluginLive-Automation\\Screenshot\\"+"FailedScreenshot_"+Methodname+"_"+".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Click drop option
@@ -259,6 +296,7 @@ public class BaseClass {
         FileInputStream fileInputStream = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheet(sheetname);
+
         Row row = sheet.getRow(rownum);
         Cell cell = row.getCell(cellnum);
         CellType cellType = cell.getCellType();
@@ -270,8 +308,8 @@ public class BaseClass {
             case NUMERIC:
                 if (DateUtil.isCellDateFormatted(cell)) {
                     Date dateCellValue = cell.getDateCellValue();
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yy");
-                    dateFormat.format(dateCellValue);
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    res = dateFormat.format(dateCellValue);
                 } else {
                     double numericCellValue = cell.getNumericCellValue();
                     long check = Math.round(numericCellValue);
@@ -358,6 +396,12 @@ public class BaseClass {
         workbook.write(fileOutputStream);
     }
 
+
+    public void enterkey(WebElement element) {
+        element.sendKeys(Keys.ENTER);
+
+    }
+
     //Quitbrowser
     public void quitbrowser() {
         driver.quit();
@@ -374,8 +418,9 @@ public class BaseClass {
         element.clear();
         return previousText;
     }
-//To clear
-    public void clear(WebElement element){
+
+    //To clear
+    public void clear(WebElement element) {
         element.clear();
     }
 
@@ -383,7 +428,7 @@ public class BaseClass {
     //upload file
     public void tenthuploadfile() throws AWTException, IOException {
         StringSelection ss = new StringSelection(getPropertyFileValue("imagePath"));
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
         Robot r = new Robot();
         r.delay(1000);
         r.keyPress(KeyEvent.VK_CONTROL);
@@ -394,22 +439,71 @@ public class BaseClass {
         r.keyRelease(KeyEvent.VK_ENTER);
     }
 
-public void switchchildwindow() {
+    public void deletecookies() {
+        driver.manage().deleteAllCookies();
+    }
 
-    String mainWindowHandle = driver.getWindowHandle();
-    Set<String> allWindowHandles = driver.getWindowHandles();
-    Iterator<String> iterator = allWindowHandles.iterator();
+    public void pageload() {
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+    }
 
-    // Here we will check if child window has other child windows and will fetch the heading of the child window
-    while (iterator.hasNext()) {
-        String ChildWindow = iterator.next();
-        if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
-            driver.switchTo().window(ChildWindow);
+    public void switchchildwindow() {
+
+        String mainWindowHandle = driver.getWindowHandle();
+        Set<String> allWindowHandles = driver.getWindowHandles();
+        Iterator<String> iterator = allWindowHandles.iterator();
+
+        // Here we will check if child window has other child windows and will fetch the heading of the child window
+        while (iterator.hasNext()) {
+            String ChildWindow = iterator.next();
+            if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+                driver.switchTo().window(ChildWindow);
+            }
         }
     }
 
+    public void windowHandles() {
+        Set<String> windowhandles = driver.getWindowHandles();
+        List<String> list = new ArrayList<>(windowhandles);
+        String parentwindowID = list.get(0);
+        //String childwindowID = list.get(1);
 
-}
+//        System.out.println("parentwindowID:" + parentwindowID);
+        //System.out.println("Child window ID:" + childwindowID);
+
+    }
+
+    public void oldwindowHandle(){
+        Set<String> windowhandles = driver.getWindowHandles();
+        List<String> list = new ArrayList<>(windowhandles);
+        String parentwindowID = list.get(0);
+        System.out.println("parentwindowID:" + parentwindowID);
+
+
+    }
+    public void newwindowHandle(){
+        Set<String> windowhandles = driver.getWindowHandles();
+        List<String> list = new ArrayList<>(windowhandles);
+        String childwindowID = list.get(1);
+        System.out.println("Child window ID:" + childwindowID);
+
+
+    }
+
+
+
+    public void switchToWindow(){
+        String mainWindowHandle = driver.getWindowHandle();
+
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        for (String tab : tabs) {
+            if (!tab.equals(mainWindowHandle)) {
+                driver.switchTo().window(tab);
+                break;
+            }
+        }
+    }
+
 }
 
 

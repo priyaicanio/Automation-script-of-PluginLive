@@ -47,7 +47,7 @@ public class NewRoleJobDetailsPage extends BaseClass {
         return listfunction;
     }
 
-    @FindBy(xpath = "//div[@class='ant-picker-cell-inner']")
+    @FindBy(xpath = "(//table[@class=\"ant-picker-content\"])[1]")
     private List<WebElement> listStartdate;
 
     public List<WebElement> getListStartdate() {
@@ -58,7 +58,7 @@ public class NewRoleJobDetailsPage extends BaseClass {
         return listEnddate;
     }
 
-    @FindBy(xpath = "//div[@class='ant-picker-cell-inner']")
+    @FindBy(xpath = "(//table[@class=\"ant-picker-content\"])[1]")
     private List<WebElement> listEnddate;
 
     public List<WebElement> getJobDetailsTitle() {
@@ -112,10 +112,10 @@ public class NewRoleJobDetailsPage extends BaseClass {
     }
 
     // Arrow for next button start date
-    @FindBy(xpath = "(//button[@class='ant-picker-header-next-btn'])[1]")
+    @FindBy(xpath = "(//button[@class=\"ant-picker-header-next-btn\"])[1]")
     private WebElement nextstartdatebutton;
     // Arrow for next button end date
-    @FindBy(xpath = "(//button[@class='ant-picker-header-next-btn'])[2]")
+    @FindBy(xpath = "(//button[@class=\"ant-picker-header-next-btn\"])[2]")
     private WebElement nextenddatebutton;
 
 
@@ -197,17 +197,17 @@ public class NewRoleJobDetailsPage extends BaseClass {
     //}
     public void jobDetails(String function, String jobTitle, String jobDescription, String noOfcandidates, String startdate, String enddate) throws InterruptedException, AWTException {
         click(getJobDetails());
-sendkeys(getJobDetails(),function);
+        sendkeys(getJobDetails(), function);
         Thread.sleep(1000);
 
-enterKey();
-click(getJobTitle());
-Thread.sleep(1000);
-sendkeys(getJobTitle(),jobTitle);
+        enterKey();
+        click(getJobTitle());
+        Thread.sleep(1000);
+        sendkeys(getJobTitle(), jobTitle);
         Thread.sleep(1000);
 
-enterKey();
-click(getJobTypeFresher());
+        enterKey();
+        click(getJobTypeFresher());
         click(getEmploymentTypeOnroll());
         click(getEmploymentTypeFullTime());
         Thread.sleep(1000);
@@ -216,7 +216,23 @@ click(getJobTypeFresher());
         click(getNoofCandidates());
         sendkeys(getNoofCandidates(), noOfcandidates);
         click(getApplicationStartDate());
-        click(getNextstartdatebutton());
+        selectall();
+
+        Thread.sleep(1000);
+sendkeys(getApplicationStartDate(), startdate);
+        Thread.sleep(1000);
+        enterKey();
+        click(getApplicationEndDate());
+        selectall();
+        Thread.sleep(1000);
+        sendkeys(getApplicationEndDate(), enddate);
+        Thread.sleep(1000);
+        enterKey();
+
+    }
+}
+
+       /* click(getNextstartdatebutton());
         for (int i = 0; i < getListStartdate().size(); i++) {
             if (getListStartdate().get(i).getText().equals(startdate)) {
                 getListStartdate().get(i).click();
@@ -261,6 +277,8 @@ click(getJobTypeFresher());
         click(getEmploymentTypePartTime());
     }
 }
+}
+        */
 
 
     //public void joblist(){

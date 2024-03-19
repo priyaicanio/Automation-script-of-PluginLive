@@ -13,14 +13,14 @@ public class QuestionnairePage extends BaseClass {
 
     }
 
-    @FindBy (xpath = "//input[@value=\"Yes\"]")
+    @FindBy(xpath = "//input[@value=\"Yes\"]")
     private WebElement yesOption;
 
-    @FindBy (xpath = "//input[@value=\"No\"]")
+    @FindBy(xpath = "//input[@value=\"No\"]")
     private WebElement noOption;
 
-    @FindBy (xpath = "//div[text()='Finish']")
-   private WebElement finishButton;
+    @FindBy(xpath = "//div[text()='Finish']")
+    private WebElement finishButton;
 
     public WebElement getYesOption() {
         return yesOption;
@@ -43,7 +43,6 @@ public class QuestionnairePage extends BaseClass {
 
 
     }
-
 
 
 }

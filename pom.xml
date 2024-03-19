@@ -80,17 +80,31 @@
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi</artifactId>
-        <version>5.2.3</version>
+        <version>4.1.2</version>
     </dependency>
 
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
-        <version>5.2.3</version>
+        <version>4.1.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/net.sf.jxls/jxls-reader -->
+    <dependency>
+        <groupId>net.sf.jxls</groupId>
+        <artifactId>jxls-reader</artifactId>
+        <version>1.0.6</version>
+    </dependency>
+
+    <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon</artifactId>
+        <version>8.7</version>
+    </dependency>
 
 </dependencies>
+
+    <!-- JExcelApi for Excel handling -->
 
     <groupId>org.example</groupId>
     <artifactId>pluginLiveAutomation</artifactId>

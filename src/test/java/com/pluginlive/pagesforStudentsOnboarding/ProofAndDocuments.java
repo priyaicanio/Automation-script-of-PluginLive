@@ -13,38 +13,38 @@ import java.io.IOException;
 public class ProofAndDocuments extends BaseClass {
     public ProofAndDocuments() throws IOException {
         super();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    String IDproof = readExcelData1("ProofAndDocument",1,0);
-    String Addressproof = readExcelData1("ProofAndDocument",1,1);
+    String IDproof = readExcelData1("ProofAndDocument", 1, 0);
+    String Addressproof = readExcelData1("ProofAndDocument", 1, 1);
 
     public WebElement getSaveAndContinueButton() {
         return saveAndContinueButton;
     }
 
-    @FindBy (xpath = "//button[@form=\"documentForm\"]")
+    @FindBy(xpath = "//button[@form=\"documentForm\"]")
     private WebElement saveAndContinueButton;
 
-    @FindBy (xpath = "//input[@value=\"driving_licence\"]" )
+    @FindBy(xpath = "//input[@value=\"driving_licence\"]")
     private WebElement IDproofDrivingLicense;
 
-    @FindBy (xpath = "(//input[@value=\"aadhaar_card\"])[1]")
+    @FindBy(xpath = "(//input[@value=\"aadhaar_card\"])[1]")
     private WebElement IDproofAadhaarCard;
 
-    @FindBy (xpath = "//div[text()='Upload File']")
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement IDproofUploadButton;
 
-    @FindBy (xpath = "//input[@value=\"pan_card\"]")
+    @FindBy(xpath = "//input[@value=\"pan_card\"]")
     private WebElement AddressproofPANCARD;
 
-    @FindBy (xpath = "(//input[@value=\"aadhaar_card\"])[2]")
+    @FindBy(xpath = "(//input[@value=\"aadhaar_card\"])[2]")
     private WebElement AddressproofAadharcard;
 
-    @FindBy (xpath = "//input[@value=\"passport\"]")
+    @FindBy(xpath = "//input[@value=\"passport\"]")
     private WebElement AddressproofPassport;
 
-    @FindBy (xpath = "//div[text()='Upload File']")
+    @FindBy(xpath = "//div[text()='Upload File']")
     private WebElement AddressproofUpload;
 
     public WebElement getIDproofDrivingLicense() {
@@ -80,47 +80,43 @@ public class ProofAndDocuments extends BaseClass {
         click(getSaveAndContinueButton());
     }
 
-public void addingproofanddocument() throws InterruptedException, AWTException {
-    Thread.sleep(2000);
-click(getIDproofUploadButton());
-    Thread.sleep(2000);
-    StringSelection ss = new StringSelection(IDproof);
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
-    Robot r = new Robot();
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_CONTROL);
-    r.keyPress(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyRelease(KeyEvent.VK_CONTROL);
-    r.keyRelease(KeyEvent.VK_V);
-    r.delay(1000);
-    r.keyPress(KeyEvent.VK_ENTER);
-    r.keyRelease(KeyEvent.VK_ENTER);
-    Thread.sleep(3000);
-    enterKey();
-    Thread.sleep(2000);
+
+    public void addingproofanddocument(String IDproof, String Addressproof) throws InterruptedException, AWTException {
+        Thread.sleep(2000);
+        click(getIDproofUploadButton());
+        Thread.sleep(2000);
+        StringSelection ss = new StringSelection(IDproof);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+        Robot r = new Robot();
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_V);
+        r.delay(1000);
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+        enterKey();
+        Thread.sleep(2000);
 
 
-
-    click(getAddressproofUpload());
-    Thread.sleep(2000);
-    StringSelection ss1 = new StringSelection(Addressproof);
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss1,null);
-    Robot r1 = new Robot();
-    r1.delay(1000);
-    r1.keyPress(KeyEvent.VK_CONTROL);
-    r1.keyPress(KeyEvent.VK_V);
-    r1.delay(1000);
-    r1.keyRelease(KeyEvent.VK_CONTROL);
-    r1.keyRelease(KeyEvent.VK_V);
-    r1.delay(1000);
-    r1.keyPress(KeyEvent.VK_ENTER);
-    r1.keyRelease(KeyEvent.VK_ENTER);
-    Thread.sleep(3000);
-    enterKey();
-
-}
-
-
-
+        click(getAddressproofUpload());
+        Thread.sleep(2000);
+        StringSelection ss1 = new StringSelection(Addressproof);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss1, null);
+        Robot r1 = new Robot();
+        r1.delay(1000);
+        r1.keyPress(KeyEvent.VK_CONTROL);
+        r1.keyPress(KeyEvent.VK_V);
+        r1.delay(1000);
+        r1.keyRelease(KeyEvent.VK_CONTROL);
+        r1.keyRelease(KeyEvent.VK_V);
+        r1.delay(1000);
+        r1.keyPress(KeyEvent.VK_ENTER);
+        r1.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+        enterKey();
+    }
 }

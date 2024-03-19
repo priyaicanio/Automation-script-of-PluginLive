@@ -9,7 +9,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
-public class NewRoleCTCandJobLocation  extends BaseClass {
+public class NewRoleCTCandJobLocation extends BaseClass {
 
     public NewRoleCTCandJobLocation() throws IOException {
         PageFactory.initElements(driver, this);
@@ -151,7 +151,7 @@ public class NewRoleCTCandJobLocation  extends BaseClass {
         click(getDifferentCTCOfEachTier());
     }
 
-   @FindBy(xpath = "(//input[@class=\"ant-select-selection-search-input\"])[4]")
+    @FindBy(xpath = "(//input[@class=\"ant-select-selection-search-input\"])[4]")
 
 
     private WebElement jobLocation;
@@ -243,7 +243,7 @@ public class NewRoleCTCandJobLocation  extends BaseClass {
 
         Thread.sleep(1000);
         click(allowHybrid);
-Thread.sleep(1000);
+        Thread.sleep(1000);
 
         // if (!allowHybrid.isSelected()) {
 
