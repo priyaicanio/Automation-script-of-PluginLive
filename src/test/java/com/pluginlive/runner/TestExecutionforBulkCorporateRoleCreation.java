@@ -51,7 +51,6 @@ public class TestExecutionforBulkCorporateRoleCreation extends BaseClass {
             driver.quit();
         }
     }
-
     @Test(dataProvider = "corporaterolecreation")
 public void BulkRoleCreation(String userName,String password, String function,String jobTitle,String jobDescription,String noOfcandidates,String startdate, String enddate,String tier1MinRange,String tier1MaxRange,String jobLocation, String workFromOffice, String degree,String degree1, String specialisation,String skill1,String skill2, String skill3, String skill4, String skill5, String skill6,String year1, String year2, String year3, String year4, String year5,String averagemark, String question,String option1,String option2,String Roundname1,String Round1Description,String Roundname2,String Round2Description,String Roundname3, String Round3Description,String clgName, String clgName1, String clgName2) throws IOException, InterruptedException, AWTException {
 

@@ -34,7 +34,6 @@ public class TestExecutionforBulkStudentsOnboarding extends BaseClass {
         implicitywait();
         enterurl(getPropertyFileValue("studentregistrationurl"));
         javascriptscrolldown();
-//        windowHandles();
         pom.getLoginPage().register();
     }
 
