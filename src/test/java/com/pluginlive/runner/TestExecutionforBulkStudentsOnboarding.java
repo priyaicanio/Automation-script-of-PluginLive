@@ -56,9 +56,9 @@ public class TestExecutionforBulkStudentsOnboarding extends BaseClass {
     @AfterMethod
     public void tearDown() {
         // Common teardown code here
-//        if (driver != null) {
-//            driver.quit();
-//        }
+      if (driver != null) {
+           driver.quit();
+       }
     }
 
 
