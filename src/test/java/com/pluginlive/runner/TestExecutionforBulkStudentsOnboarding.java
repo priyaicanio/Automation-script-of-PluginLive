@@ -53,7 +53,7 @@ public class TestExecutionforBulkStudentsOnboarding extends BaseClass {
         return loginData;
     }
 
-    @AfterMethod
+    @AfterSuite
     public void tearDown() {
         // Common teardown code here
       if (driver != null) {
