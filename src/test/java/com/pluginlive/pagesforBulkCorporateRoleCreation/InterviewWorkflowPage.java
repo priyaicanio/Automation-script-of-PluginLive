@@ -77,7 +77,7 @@ public class InterviewWorkflowPage extends BaseClass {
     @FindBy(xpath = "(//div[@class=\"notranslate public-DraftEditor-content\"])[2]")
     private WebElement roundDescription;
 
-    @FindBy(xpath = "(//button[@class=\"ant-btn ant-btn-secondary sc-ftTHYK kQoyeN\"])[3]")
+    @FindBy(xpath = "//div[text()='Add Rounds']")
     private WebElement addRounds;
     @FindBy(xpath = "//input[@value=\"DOMAIN_EXPERTS\"]")
     private WebElement domainExperts;

@@ -4,8 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.impl.jam.JElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,11 +29,6 @@ public class BaseClass {
     public static WebDriver driver;
 
     public BaseClass() throws IOException {
-    }
-
-    //Launching Browser
-    public static void browserlaunch() {
-        driver = new ChromeDriver();
     }
 
     // Entering URL
@@ -108,6 +105,18 @@ public class BaseClass {
         driverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    //Javascript sendkeys
+    public void elementSendKeysjs(WebElement element, String data) {
+        JavascriptExecutor js =(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+data+"')",element);
+    }
+
+    //elemententer
+    public static void enter(WebDriver driver) {
+        WebElement activeElement = driver.switchTo().activeElement();
+        activeElement.sendKeys(Keys.ENTER);
+    }
+
     //elementtobeclickable
     public void elementtobeclickable(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Wait up to 10 seconds
@@ -158,11 +167,14 @@ public class BaseClass {
 
 
     //getdriver
-    public void getdriver(String browsertype) {
+    public void getdriverheadless(String browsertype) {
         switch (browsertype) {
             case "ChromeDriver":
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless");
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
+
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
@@ -170,6 +182,20 @@ public class BaseClass {
         }
 
     }
+
+    public void getdriver(String browsertype){
+        switch (browsertype) {
+            case "ChromeDriver":
+                WebDriverManager.chromedriver().clearDriverCache().setup();
+              //  WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+            case "firefox":
+                driver = new FirefoxDriver();
+                break;
+        }
+    }
+
 
     // enterKey
     public void enterKey() throws AWTException {
@@ -277,7 +303,7 @@ public class BaseClass {
         TakesScreenshot tk = (TakesScreenshot) driver;
         File file = tk.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File("C:\\Users\\ICANIO-10090\\Desktop\\Project\\PluginLive-Automation\\Screenshot\\"+"FailedScreenshot_"+Methodname+"_"+".jpg"));
+            FileUtils.copyFile(file, new File("C:\\Users\\Priya Thangaraj\\Desktop\\Pluginlive Automation\\PluginLive-Automation (1)\\Screenshot\\"+"FailedScreenshot_"+Methodname+"_"+".jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }

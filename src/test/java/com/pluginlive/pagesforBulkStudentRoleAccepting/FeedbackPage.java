@@ -1,6 +1,7 @@
 package com.pluginlive.pagesforBulkStudentRoleAccepting;
 
 import com.pluginlive.base.BaseClass;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -80,23 +81,30 @@ public class FeedbackPage extends BaseClass {
 
     public void feedback(String reference) throws InterruptedException, AWTException {
         implicitywait();
+        Thread.sleep(2000);
+       // elementSendKeysjs(getInformationAboutThisJobRole(),reference);
         sendkeys(getInformationAboutThisJobRole(), reference);
+        Thread.sleep(3000);
+        enter(driver);
         Thread.sleep(1000);
-        enterKey();
-        click(getNextButton());
+        elementclickjs(getNextButton());
+        //click(getNextButton());
 
 
     }
 
     public void feedbackform(String feedback) throws InterruptedException {
         implicitywait();
-        click(getStarRating());
+        Thread.sleep(3000);
+        elementclickjs(getStarRating());
         Thread.sleep(1000);
-        click(getAboutus());
+        elementclickjs(getAboutus());
+        // click(getAboutus());
         Thread.sleep(1000);
         sendkeys(getWrittenFeedback(), feedback);
         Thread.sleep(1000);
-        click(getSendFeedbackButton());
+        elementclickjs(getSendFeedbackButton());
+       // click(getSendFeedbackButton());
     }
 
     public String appliedSuccessMsg() {
@@ -106,7 +114,8 @@ public class FeedbackPage extends BaseClass {
 
     public void donebutton() throws InterruptedException {
         Thread.sleep(2000);
-        click(getDoneButton());
+        elementclickjs(getDoneButton());
+        //click(getDoneButton());
     }
 
 }

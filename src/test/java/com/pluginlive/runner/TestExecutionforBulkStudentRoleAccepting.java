@@ -4,7 +4,10 @@ import com.pluginlive.ListenersExample;
 import com.pluginlive.base.BaseClass;
 import com.pluginlive.pagemanager.PageObjectManagerBulkStudentRoleAccepting;
 import com.pluginlive.runner.excel.utility.XLUtility;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -34,7 +37,7 @@ public class TestExecutionforBulkStudentRoleAccepting extends BaseClass {
     //Data from excel
     @DataProvider(name = "studentcredential")
     public String[][] getData() throws IOException {
-        String path = "C:\\Users\\ICANIO-10090\\Desktop\\Project\\PluginLive-Automation\\Excel\\PluginLive Automation Students Onboarding.xlsx";
+        String path = "C:\\Users\\Priya Thangaraj\\Desktop\\Pluginlive Automation\\PluginLive-Automation (1)\\Excel\\PluginLive Automation Students Onboarding.xlsx";
         XLUtility xlutil = new XLUtility(path);
         int totalrows = xlutil.getRowCount("BulkStudentRoleAcceptingFlow");
         int totalcols = xlutil.getCellCount("BulkStudentRoleAcceptingFlow", 1);
@@ -54,20 +57,23 @@ public class TestExecutionforBulkStudentRoleAccepting extends BaseClass {
         }
     }
     @Test(dataProvider = "studentcredential")
-    public void BulkRoleAcceptingFlow(String userName, String password, String search, String reference, String feedback) throws IOException, InterruptedException, AWTException {
+    public void
+
+
+    BulkRoleAcceptingFlow(String userName, String password, String search, String reference, String feedback) throws IOException, InterruptedException, AWTException {
         pom.getLoginPage().Login(userName, password);
         pom.getHomePage().rolesbutton();
         pom.getRolesPage().RoleSearch(search);
         pom.getRolesPage().RoleList();
         pom.getQuesionnairePage().questionnaire();
-        pom.getFeedbackPage().feedback(reference);
-        pom.getFeedbackPage().feedbackform(feedback);
         String actualText = "You Applied Successfully !";
         WebElement expected = pom.getFeedbackPage().getAppliedsuccessfullmsg();
         String expectedText = expected.getText();
         Assert.assertEquals(actualText, expectedText);
         System.out.println(expectedText);
         pom.getFeedbackPage().getDoneButton().click();
+        pom.getFeedbackPage().feedback(reference);
+        pom.getFeedbackPage().feedbackform(feedback);
         pom.getLogoutPage().logoutfunction();
     }
 }

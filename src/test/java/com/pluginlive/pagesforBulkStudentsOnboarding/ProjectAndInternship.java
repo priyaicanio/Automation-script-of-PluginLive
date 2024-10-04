@@ -299,9 +299,8 @@ public class ProjectAndInternship extends BaseClass {
         Thread.sleep(2000);
         enterKey();
         Thread.sleep(1000);
-        click(getOutsideclick());
-        Thread.sleep(2000);
-
+scrolldown(getUpload());
+        Thread.sleep(1000);
         click(getUpload());
         Thread.sleep(2000);
         StringSelection ss = new StringSelection(certificateimg);

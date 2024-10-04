@@ -5,6 +5,7 @@ import com.pluginlive.base.BaseClass;
 import com.pluginlive.pagemanager.PageObjectManagerBulkCorporateRoleCreation;
 import com.pluginlive.runner.excel.utility.XLUtility;
 import org.apache.xmlbeans.impl.schema.XQuerySchemaTypeSystem;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import java.awt.*;
@@ -12,13 +13,11 @@ import java.io.IOException;
 
 @Listeners(ListenersExample.class)
 public class TestExecutionforBulkCorporateRoleCreation extends BaseClass {
-
     PageObjectManagerBulkCorporateRoleCreation pom = new PageObjectManagerBulkCorporateRoleCreation();
 
     public TestExecutionforBulkCorporateRoleCreation() throws IOException {
    super();
     }
-
     @BeforeSuite
     public void setUp() throws IOException {
         // Common setup code here
@@ -29,10 +28,9 @@ public class TestExecutionforBulkCorporateRoleCreation extends BaseClass {
         implicitywait();
         enterurl(getPropertyFileValue("url"));
     }
-
     @DataProvider(name = "corporaterolecreation")
     public String[][] getData() throws IOException {
-        String path = "C:\\Users\\ICANIO-10090\\Desktop\\Project\\PluginLive-Automation\\Excel\\PluginLive Automation Students Onboarding.xlsx";
+        String path = "C:\\Users\\Priya Thangaraj\\Desktop\\Pluginlive Automation\\PluginLive-Automation (1)\\Excel\\PluginLive Automation Students Onboarding.xlsx";
         XLUtility xlutil = new XLUtility(path);
         int totalrows = xlutil.getRowCount("BulkCorporateRoleCreation");
         int totalcols = xlutil.getCellCount("BulkCorporateRoleCreation", 1);
@@ -52,7 +50,11 @@ public class TestExecutionforBulkCorporateRoleCreation extends BaseClass {
         }
     }
     @Test(dataProvider = "corporaterolecreation")
-public void BulkRoleCreation(String userName,String password, String function,String jobTitle,String jobDescription,String noOfcandidates,String startdate, String enddate,String tier1MinRange,String tier1MaxRange,String jobLocation, String workFromOffice, String degree,String degree1, String specialisation,String skill1,String skill2, String skill3, String skill4, String skill5, String skill6,String year1, String year2, String year3, String year4, String year5,String averagemark, String question,String option1,String option2,String Roundname1,String Round1Description,String Roundname2,String Round2Description,String Roundname3, String Round3Description,String clgName, String clgName1, String clgName2) throws IOException, InterruptedException, AWTException {
+public void
+
+
+
+    BulkRoleCreation(String userName,String password, String function,String jobTitle,String jobDescription,String noOfcandidates,String startdate, String enddate,String tier1MinRange,String tier1MaxRange,String jobLocation, String workFromOffice, String degree,String degree1, String specialisation,String skill1,String skill2, String skill3, String skill4, String skill5, String skill6,String year1, String year2, String year3, String year4, String year5,String averagemark, String question,String option1,String option2,String Roundname1,String Round1Description,String Roundname2,String Round2Description,String Roundname3, String Round3Description,String clgName, String clgName1, String clgName2) throws IOException, InterruptedException, AWTException {
 
         System.out.println("Login process begins");
         pom.getLoginPage().Login(userName,password);
@@ -66,3 +68,6 @@ public void BulkRoleCreation(String userName,String password, String function,St
         pom.getLogoutPage().logout();
     }
 }
+
+
+

@@ -198,17 +198,19 @@ public class NewRoleJobDetailsPage extends BaseClass {
     //}
     public void jobDetails(String function, String jobTitle, String jobDescription, String noOfcandidates, String startdate, String enddate) throws InterruptedException, AWTException {
         click(getJobDetails());
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         sendkeys(getJobDetails(), function);
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         enterKey();
-        click(getJobTitle());
+        elementclickjs(getJobTitle());
+        //click(getJobTitle());
         Thread.sleep(1000);
         sendkeys(getJobTitle(), jobTitle);
         Thread.sleep(1000);
 
         enterKey();
-        click(getJobTypeFresher());
+        elementclickjs(getJobTypeFresher());
+       // click(getJobTypeFresher());
         click(getEmploymentTypeOnroll());
         click(getEmploymentTypeFullTime());
         Thread.sleep(1000);

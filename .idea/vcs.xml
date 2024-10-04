@@ -4,5 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PluginLive_Automation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/my_project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/new_project" vcs="Git" />
   </component>
 </project>

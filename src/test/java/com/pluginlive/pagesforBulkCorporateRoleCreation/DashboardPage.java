@@ -16,7 +16,7 @@ public class DashboardPage extends BaseClass {
     private WebElement loginsuccessmsg;
     @FindBy(xpath = "(//li[@role='menuitem'])[1]")
     private WebElement selectDashboard;
-    @FindBy(xpath = "(//li[@role='menuitem'])[2]")
+    @FindBy(xpath = "(//li[@role='menuitem'])[3]")
     private WebElement selectRoles;
     @FindBy(xpath = "(//li[@role='menuitem'])[3]")
     private WebElement selectDrives;

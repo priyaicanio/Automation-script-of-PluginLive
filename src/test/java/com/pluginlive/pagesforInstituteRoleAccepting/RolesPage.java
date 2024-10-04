@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static jdk.nashorn.internal.objects.Global.print;
 
 public class RolesPage extends BaseClass {
 

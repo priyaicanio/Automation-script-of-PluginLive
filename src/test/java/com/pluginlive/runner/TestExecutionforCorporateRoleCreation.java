@@ -89,12 +89,6 @@ public class TestExecutionforCorporateRoleCreation extends BaseClass {
         Assert.assertEquals(actualText, exceptedText);
     }
 
-//@Test (priority = 4)
-
-    //public  void jobDetails() throws IOException {
-    //  implicitywait();
-    //pom.getNewRoleJobDetailsPage().joblist();
-//}
     @Test(priority = 4)
 //@Test(enabled = false)
 

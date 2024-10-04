@@ -37,9 +37,11 @@ public class QuestionnairePage extends BaseClass {
     public void questionnaire() throws InterruptedException {
         implicitywait();
         Thread.sleep(2000);
-        click(getYesOption());
+        elementclickjs(getYesOption());
+       // click(getYesOption());
         Thread.sleep(2000);
-        click(getFinishButton());
+        elementclickjs(getFinishButton());
+     //   click(getFinishButton());
 
 
     }

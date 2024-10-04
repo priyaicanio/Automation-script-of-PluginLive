@@ -1,7 +1,7 @@
 package com.pluginlive.pagemanager;
 
 import com.pluginlive.pagesforBulkStudentRoleAccepting.LogoutPage;
-import com.pluginlive.pagesforStudentRolesAccepting.*;
+import com.pluginlive.pagesforBulkStudentRoleAccepting.*;
 
 import java.io.IOException;
 

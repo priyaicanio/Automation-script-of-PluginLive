@@ -79,7 +79,8 @@ public class FeedbackPage extends BaseClass {
 
     public void feedback(String reference) throws InterruptedException, AWTException {
         implicitywait();
-        sendkeys(getInformationAboutThisJobRole(), reference);
+        elementSendKeysjs(getInformationAboutThisJobRole(),reference);
+        //sendkeys(getInformationAboutThisJobRole(), reference);
         Thread.sleep(1000);
         enterKey();
         click(getNextButton());

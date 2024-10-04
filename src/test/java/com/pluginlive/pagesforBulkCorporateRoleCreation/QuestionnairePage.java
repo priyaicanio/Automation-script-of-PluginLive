@@ -16,7 +16,7 @@ public class QuestionnairePage extends BaseClass {
     }
 
 
-    @FindBy(xpath = "(//button[@class=\"ant-btn ant-btn-secondary sc-ftTHYK kQoyeN\"])[2]")
+    @FindBy(xpath = "//div[text()='Add Custom Questions']")
     private WebElement addCustomQuestion;
 
     @FindBy(xpath = "(//div[@class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"])[2]")
